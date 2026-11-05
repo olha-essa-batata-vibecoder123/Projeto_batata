@@ -81,15 +81,11 @@ def logIn(): ##Função para realizar login.
     return
 
 def menu_inicial(): ##Função do menu principal. Todas as outras opções e funções são executadas a partir daqui.
-    print("Bem-vindo ao sistema de gerenciamento da AMALGAMA COMIX!")
-    print("Digite 1 para: Cadastrar usuário")
-    print("Digite 2 para: Realizar login")
-    print("Digite 0 para: Sair")
     
     value = input("Escolha uma opção: ")
 
     if (not value.isdigit()) or (int(value) not in [0, 1, 2]):
-        print("Opção inválida. Por favor, digite uma entrada válida (0, 1 ou 2).")
+        print("Opção inválida. Por favor, digite uma entrada válida (0, 1 ou 2): ")
         menu_inicial()
     else:
         value = int(value)
@@ -99,6 +95,7 @@ def menu_inicial(): ##Função do menu principal. Todas as outras opções e fun
             logIn()
         elif value == 0:
             print("Encerrando o sistema. Até a próxima leitura!")
+            exit()
     return
 
 def menu_compras():
@@ -113,6 +110,10 @@ def main(): ##Função de inicialização
             pass
     except FileNotFoundError:
         createFile()
+    print("Bem-vindo ao sistema de gerenciamento da AMALGAMA COMIX!")
+    print("Digite 1 para: Cadastrar usuário")
+    print("Digite 2 para: Realizar login")
+    print("Digite 0 para: Sair")
     menu_inicial()
 
 main()##Inicialização.
