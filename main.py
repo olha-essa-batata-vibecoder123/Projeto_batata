@@ -2,15 +2,11 @@ import json ##Biblioteca para arquivos. (Banco de Dados).
 
 def createFile(): ## Função para criar o arquivo (BD).
     dados = {
-        "user_info": {
-            "nome": None,
-            "senha": None,
-            "username": None
-        },
+        "user_info": [],
+
         "user_info_admin": {
-            "nome" : "administrador",
-            "senha" : "batatasvoadoras123",
-            "username" : "admin_loja"
+            "username" : "administrador",
+            "senha" : "batatasvoadoras123"
         },
         "loja_info": {
             "estoque": {
@@ -29,6 +25,8 @@ def createFile(): ## Função para criar o arquivo (BD).
     with open('dados.json', 'w', encoding='utf-8') as file:
         json.dump(dados, file)
 
+    return
+
 def openFile(): ## Função para abrir o arquivo (Acessar o BD).
     with open('dados.json', 'r', encoding='utf-8') as file:
         dados = json.load(file)
@@ -36,20 +34,36 @@ def openFile(): ## Função para abrir o arquivo (Acessar o BD).
 
 def signUp(): ##Função para cadastrar um novo usuário
     print("Cadastro de usuário")
-    nome = input("Digite seu nome: ")
+    nome = input("Digite seu nome completo: ")
     username = input("Digite seu nome de usuário: ")
     senha = input("Digite sua senha: ")
 
     dados = openFile()
-    dados["user_info"]["nome"] = nome.lower()
-    dados["user_info"]["username"] = username
-    dados["user_info"]["senha"] = senha
+
+    if username == dados["user_info_admin"]["username"] and senha == dados["user_info_admin"]["senha"]:
+        print("Bem-vindo ao menu de administrador")
+        menu_admin()
+        return
+        
+    for user in dados["user_info"]:
+        if (username == user["username"] and senha == user["senha"]):
+            print("Nome de usuário já cadastrado. Tente novamente.")
+            signUp()
+
+    new_user = {
+        "nome": nome,
+        "username": username,
+        "senha": senha
+    }
+    dados["user_info"].append(new_user)
 
     with open('dados.json', 'w', encoding='utf-8') as file:
         json.dump(dados, file)
 
-    print("Cadastro realizado com sucesso!\nRetornando ao menu principal...")
-    menu()
+    print("Cadastro realizado com sucesso!\nIniciando menu principal")
+    menu_compras()
+
+    return
 
 def logIn(): ##Função para realizar login.
     print("Login de usuário")
@@ -57,34 +71,48 @@ def logIn(): ##Função para realizar login.
     senha = input("Digite sua senha: ")
 
     dados = openFile()
-    if username == dados["user_info"]["username"] and senha == dados["user_info"]["senha"]:
-        print("Login realizado com sucesso!\nBem-vindo(a), {}!".format(dados["user_info"]["nome"]))
-    else:
-        print("Nome de usuário ou senha incorretos. Tente novamente.")
-        logIn()
+    for user in dados["user_info"]:
+        if (username == user["username"] and senha == user["senha"]):
+            print("Login realizado com sucesso!\nBem-vindo(a), {}!".format(user["nome"]))
+            return
+    print("Nome de usuário ou senha incorretos. Tente novamente.")
+    logIn()
 
-def menu(): ##Função do menu principal. Todas as outras opções e funções são executadas a partir daqui.
+    return
+
+def menu_inicial(): ##Função do menu principal. Todas as outras opções e funções são executadas a partir daqui.
     print("Bem-vindo ao sistema de gerenciamento da AMALGAMA COMIX!")
     print("Digite 1 para: Cadastrar usuário")
     print("Digite 2 para: Realizar login")
     print("Digite 0 para: Sair")
     
-    input = input("Escolha uma opção: ")
+    value = input("Escolha uma opção: ")
 
-    if ((not input.isdigit()) or (int(input) not in [0, 1, 2])):
+    if (not value.isdigit()) or (int(value) not in [0, 1, 2]):
         print("Opção inválida. Por favor, digite uma entrada válida (0, 1 ou 2).")
-        menu()
+        menu_inicial()
     else:
-        input = int(input)
-        if input == 1:
+        value = int(value)
+        if value == 1:
             signUp()
-        elif input == 2:
+        elif value == 2:
             logIn()
-        elif input == 0:
+        elif value == 0:
             print("Encerrando o sistema. Até a próxima leitura!")
-def main(): ##Função principal do programa. O kickstart de tudo.
-    if not openFile():
-        createFile()
-    menu()
+    return
 
-main()##Boot up.
+def menu_compras():
+    return 0
+
+def menu_admin():
+    return 0
+
+def main(): ##Função de inicialização
+    try:
+        with open('dados.json', 'r', encoding='utf-8') as file:
+            pass
+    except FileNotFoundError:
+        createFile()
+    menu_inicial()
+
+main()##Inicialização.
