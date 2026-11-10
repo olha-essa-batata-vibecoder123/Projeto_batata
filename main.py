@@ -1,6 +1,6 @@
-import json ##Biblioteca para arquivos. (Banco de Dados).
+import json 
 
-def createFile(): ## Função para criar o arquivo (BD).
+def createFile(): 
     dados = {
         "user_info": [],
 
@@ -27,12 +27,12 @@ def createFile(): ## Função para criar o arquivo (BD).
 
     return
 
-def openFile(): ## Função para abrir o arquivo (Acessar o BD).
+def openFile(): 
     with open('dados.json', 'r', encoding='utf-8') as file:
         dados = json.load(file)
     return dados
 
-def signUp(): ##Função para cadastrar um novo usuário
+def signUp(): 
     print("Cadastro de usuário")
     nome = input("Digite seu nome completo: ")
     username = input("Digite seu nome de usuário: ")
@@ -41,7 +41,7 @@ def signUp(): ##Função para cadastrar um novo usuário
     dados = openFile()
 
     if username == dados["user_info_admin"]["username"] and senha == dados["user_info_admin"]["senha"]:
-        print("Bem-vindo ao menu de administrador")
+        print("Bem-vindo ao menu de administrador!")
         menu_admin()
         return
         
@@ -60,12 +60,13 @@ def signUp(): ##Função para cadastrar um novo usuário
     with open('dados.json', 'w', encoding='utf-8') as file:
         json.dump(dados, file)
 
-    print("Cadastro realizado com sucesso!\nIniciando menu principal")
-    menu_compras()
+    print("Cadastro realizado com sucesso!\nIniciando menu principal...\n")
+    print("Bem-vindo ao menu principal da loja!")
+    menu_principal()
 
     return
 
-def logIn(): ##Função para realizar login.
+def logIn(): 
     print("Login de usuário")
     username = input("Digite seu nome de usuário: ")
     senha = input("Digite sua senha: ")
@@ -80,7 +81,7 @@ def logIn(): ##Função para realizar login.
 
     return
 
-def menu_inicial(): ##Função do menu principal. Todas as outras opções e funções são executadas a partir daqui.
+def menu_inicial():
     
     value = input("Escolha uma opção: ")
 
@@ -98,11 +99,47 @@ def menu_inicial(): ##Função do menu principal. Todas as outras opções e fun
             exit()
     return
 
-def menu_compras():
-    return 0
+def menu_principal():
+    print("Você pode:\n[1]Pesquisar obras\n[2]Verificar o carrinho\n[3]Encerrar sessão(voltar ao menu inicial)\n[4]Sair do programa")
+
+    value = input("Escolha uma opção: ")
+
+    if (not value.isdigit()) or (int(value) not in [0, 1, 2, 3, 4]):
+        print("Opção inválida. Por favor, digite uma entrada válida (0, 1 2, 3 ou 4): ")
+        menu_principal()
+    else:
+        value = int(value)
+
+        if value == 1:
+            searchSys()
+        elif value == 2:
+            shoppingList()
+        elif value == 3:
+            menu_inicial()
+        elif value == 4:
+            exit()
+    return 
 
 def menu_admin():
-    return 0
+    print("Você pode:\n[1]Verificar o estoque\n[2]Editar o estoque\n[3]Encerrar sessão(voltar ao menu inicial)\n[4]Sair do programa")
+
+    value = input("Escolha uma opção: ")
+
+    if (not value.isdigit()) or (int(value) not in [0, 1, 2, 3, 4]):
+            print("Opção inválida. Por favor, digite uma entrada válida (0, 1, 2, 3 ou 4): ")
+            menu_admin()
+    else:
+        value = int(value)
+
+        if value == 1:
+            stockCheck()
+        elif value == 2:
+            stockEditing()
+        elif value ==3:
+            menu_inicial()
+        elif value == 4:
+            exit()
+    return 
 
 def main(): ##Função de inicialização
     try:
@@ -116,4 +153,4 @@ def main(): ##Função de inicialização
     print("Digite 0 para: Sair")
     menu_inicial()
 
-main()##Inicialização.
+main()
