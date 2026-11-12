@@ -1,25 +1,108 @@
 import json 
 
-def createFile(): 
+def createFile():
     dados = {
         "user_info": [],
 
         "user_info_admin": {
-            "username" : "administrador",
-            "senha" : "batatasvoadoras123"
+            "username": "administrador",
+            "senha": "batatasvoadoras123"
         },
+
         "loja_info": {
-            "estoque": [
-                {
-                    
+            "estoque": {
+                "DC Comics": {
+                    "Crise nas Infinitas Terras": [
+                        {
+                            "nome": "Crise nas Infinitas Terras #1",
+                            "autores": "Marv Wolfman",
+                            "desenhistas": "George Pérez",
+                            "data": "03/04/1985"
+                        },
+                        
+                        {
+                            "nome": "Crise nas Infinitas Terras #2",
+                            "autores": "Marv Wolfman",
+                            "desenhistas": "George Pérez",
+                            "data": "01/05/1985"
+                        },
+                        
+                        {
+                            "nome": "Crise nas Infinitas Terras #3",
+                            "autores": "Marv Wolfman",
+                            "desenhistas": "George Pérez",
+                            "data": "05/06/1985"
+                        },
+                        
+                        {
+                            "nome": "Crise nas Infinitas Terras #4",
+                            "autores": "Marv Wolfman",
+                            "desenhistas": "George Pérez",
+                            "data": "03/07/1985"
+                        },
+                        
+                        {
+                            "nome": "Crise nas Infinitas Terras #5",
+                            "autores": "Marv Wolfman",
+                            "desenhistas": "George Pérez",
+                            "data": "07/08/1985"
+                        },
+
+                        {
+                            "nome": "Crise nas Infinitas Terras #6",
+                            "autores": "Marv Wolfman",
+                            "desenhistas": "George Pérez",
+                            "data": "04/09/1985"
+                        },
+
+                        {
+                            "nome": "Crise nas Infinitas Terras #7",
+                            "autores": "Marv Wolfman",
+                            "desenhistas": "George Pérez",
+                            "data": "02/10/1985"
+                        },
+
+                        {
+                            "nome": "Crise nas Infinitas Terras #8",
+                            "autores": "Marv Wolfman",
+                            "desenhistas": "George Pérez",
+                            "data": "06/11/1985"
+                        },
+
+                        {
+                            "nome": "Crise nas Infinitas Terras #9",
+                            "autores": "Marv Wolfman",
+                            "desenhistas": "George Pérez",
+                            "data": "04/12/1985"
+                        },
+
+                        {
+                            "nome": "Crise nas Infinitas Terras #10",
+                            "autores": "Marv Wolfman",
+                            "desenhistas": "George Pérez",
+                            "data": "01/01/1986"
+                        },
+
+                        {
+                            "nome": "Crise nas Infinitas Terras #11",
+                            "autores": "Marv Wolfman",
+                            "desenhistas": "George Pérez",
+                            "data": "05/02/1986"
+                        },
+
+
+                        {
+                            "nome": "Crise nas Infinitas Terras #12",
+                            "autores": "Marv Wolfman",
+                            "desenhistas": "George Pérez",
+                            "data": "05/03/1986"
+                        }         
+                    ],
+                    "The Dark Knight": []
                 }
-            ]
+            }
         }
     }
-
-    with open('dados.json', 'w', encoding='utf-8') as file:
-        json.dump(dados, file)
-
     return
 
 def openFile(): 
