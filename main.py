@@ -18,7 +18,8 @@ def createFile():
                             "nome_alt": "Crise nas Infinitas Terras #1",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
-                            "data": "03/04/1985"
+                            "data": "03/04/1985",
+                            "precos": None,
                         },
 
                         {
@@ -26,7 +27,8 @@ def createFile():
                             "nome_alt": "Crise nas Infinitas Terras #2",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
-                            "data": "01/05/1985"
+                            "data": "01/05/1985",
+                            "precos": None,
                         },
 
                         {
@@ -34,7 +36,8 @@ def createFile():
                             "nome_alt": "Crise nas Infinitas Terras #3",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
-                            "data": "05/06/1985"
+                            "data": "05/06/1985",
+                            "precos": None,
                         },
 
                         {
@@ -42,7 +45,8 @@ def createFile():
                             "nome_alt": "Crise nas Infinitas Terras #4",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
-                            "data": "03/07/1985"
+                            "data": "03/07/1985",
+                            "precos": None,
                         },
 
                         {
@@ -50,7 +54,8 @@ def createFile():
                             "nome_alt": "Crise nas Infinitas Terras #5",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
-                            "data": "07/08/1985"
+                            "data": "07/08/1985",
+                            "precos": None,
                         },
 
                         {
@@ -58,7 +63,8 @@ def createFile():
                             "nome_at": "Crise nas Infinitas Terras #6",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
-                            "data": "04/09/1985"
+                            "data": "04/09/1985",
+                            "precos": None,
                         },
 
                         {
@@ -66,7 +72,8 @@ def createFile():
                             "nome_alt": "Crise nas Infinitas Terras #7",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
-                            "data": "02/10/1985"
+                            "data": "02/10/1985",
+                            "precos": None,
                         },
 
                         {
@@ -74,7 +81,8 @@ def createFile():
                             "nome_alt": "Crise nas Infinitas Terras #8",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
-                            "data": "06/11/1985"
+                            "data": "06/11/1985",
+                            "precos": None,
                         },
 
                         {
@@ -82,7 +90,8 @@ def createFile():
                             "nome_alt": "Crise nas Infinitas Terras #9",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
-                            "data": "04/12/1985"
+                            "data": "04/12/1985",
+                            "precos": None,
                         },
 
                         {
@@ -90,7 +99,8 @@ def createFile():
                             "nome_alt": "Crise nas Infinitas Terras #10",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
-                            "data": "01/01/1986"
+                            "data": "01/01/1986",
+                            "precos": None,
                         },
 
                         {
@@ -98,7 +108,8 @@ def createFile():
                             "nome_alt": "Crise nas Infinitas Terras #11",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
-                            "data": "05/02/1986"
+                            "data": "05/02/1986",
+                            "precos": None,
                         },
 
                         {
@@ -106,7 +117,8 @@ def createFile():
                             "nome_alt": "Crise nas Infinitas Terras #12",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
-                            "data": "05/03/1986"
+                            "data": "05/03/1986",
+                            "precos": None
                         }
                     ]
                 }
@@ -114,7 +126,7 @@ def createFile():
         }
     }
 
-    return
+    return dados
 
 def openFile(): 
     with open('dados.json', 'r', encoding='utf-8') as file:
@@ -232,9 +244,93 @@ def menu_admin():
             exit()
     return 
 
-def searchSys():
+def showStock():
     dados = openFile()
+    estoque = dados["loja_info"]["estoque"]
 
+    print("################### Coleção de obras ####################\n")
+
+    for editora, saga in estoque.items():
+        print(f"\n################### {editora} ###################")
+
+        for nome_saga, quadrinhos in saga.items():
+            print(f"\n################### {saga} ###################")
+
+            for quadrinho in quadrinhos:
+                print(f"{quadrinho["nome"]} - {quadrinho["autores"]}")
+    
+    return
+
+
+def comicValidation(comic):
+
+    dados = openFile()
+    estoque = dados["loja_info"]["estoque"]
+
+    for editora, colecoes in estoque.items():
+
+        for nome_colecao, quadrinhos in colecoes.items():
+
+            for quadrinho in quadrinhos:
+
+                nome_original = quadrinho["nome"].lower()
+                nome_alternativo = quadrinho.get("nome_alt", "").lower()
+
+                if comic.lower() == nome_original or comic.lower() == nome_alternativo:
+
+                    return quadrinho
+
+    return None
+
+
+def searchSys():   
+    showStock()
+
+    comic = input("Essas são as opções de obra para leitura.\nDigite o nome da obra para ver seus detalhes: ")
+
+    if comicValidation(comic):
+        showComicDetails()
+
+    return
+
+def showComicDetails(comic):
+    dados = openFile()
+    estoque = dados["loja_info"]["estoque"]
+
+    print("------ Detalhes do produto ------\n")
+    
+    print(f"Nome da Obra: {comic["nome"]}")
+    print(f"Autor(s) da Obra: {comic["autores"]}")
+    print(f"Desenhista(s) da Obra: {comic["desenhistas"]}")
+    print(f"Data de lançamento da Obra: {comic["data"]}")
+    print(f"Preço da Obra (USD/BRL): {comic["precos"]}")
+
+    print("Para se dirigir à opção de compra digite [1]\nPara adicionar o item ao carrinho digite [2]\nPara voltar ao menu anterior digite [0]\n")
+    opcao = ("O que deseja fazer?: ")
+
+    if (opcao.isdigit()) or not(int(opcao) > 0 or int(opcao) < 3):
+        print("Por favor tente novamente. Digite uma opção válida.")
+        showComicDetails(comic)
+    else:
+
+        if int(opcao) == 1:
+            buyMenu()
+        elif int(opcao) == 2:
+            print("Item adicionado com sucesso")
+
+            redirect = ("Deseja ver seus itens no carrinho?(s/n): ")
+
+            if redirect.lower() == 's':
+                shoppingList()
+            elif redirect.lower == '2':
+                print("Entendido. Voltando à lista de obras")
+
+                searchSys()
+
+        elif int(opcao) == 0:
+            searchSys()
+
+    return
 
 def main(): ##Função de inicialização
     try:
@@ -242,7 +338,7 @@ def main(): ##Função de inicialização
             pass
     except FileNotFoundError:
         createFile()
-    print("Bem-vindo ao sistema de gerenciamento da AMALGAMA COMIX!")
+    print("##################### Bem-vindo ao sistema de gerenciamento da AMALGAMA COMIX!####################\n")
     print("Digite 1 para: Cadastrar usuário")
     print("Digite 2 para: Realizar login")
     print("Digite 0 para: Sair")
