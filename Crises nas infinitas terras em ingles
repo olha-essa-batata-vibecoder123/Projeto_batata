@@ -1,0 +1,80 @@
+
+{
+    "DC Comics": {
+        "Crise nas Infinitas Terras": [
+            {
+                "nome": "Crisis on Infinite Earths #1",
+                "autores": "Marv Wolfman",
+                "desenhistas": "George Pérez",
+                "data": "03/04/1985"
+            },
+            {
+                "nome": "Crisis on Infinite Earths #2",
+                "autores": "Marv Wolfman",
+                "desenhistas": "George Pérez",
+                "data": "01/05/1985"
+            },
+            {
+                "nome": "Crisis on Infinite Earths #3",
+                "autores": "Marv Wolfman",
+                "desenhistas": "George Pérez",
+                "data": "05/06/1985"
+            },
+            {
+                "nome": "Crisis on Infinite Earths #4",
+                "autores": "Marv Wolfman",
+                "desenhistas": "George Pérez",
+                "data": "03/07/1985"
+            },
+            {
+                "nome": "Crisis on Infinite Earths #5",
+                "autores": "Marv Wolfman",
+                "desenhistas": "George Pérez",
+                "data": "07/08/1985"
+            },
+            {
+                "nome": "Crisis on Infinite Earths #6",
+                "autores": "Marv Wolfman",
+                "desenhistas": "George Pérez",
+                "data": "04/09/1985"
+            },
+            {
+                "nome": "Crisis on Infinite Earths #7",
+                "autores": "Marv Wolfman",
+                "desenhistas": "George Pérez",
+                "data": "02/10/1985"
+            },
+            {
+                "nome": "Crisis on Infinite Earths #8",
+                "autores": "Marv Wolfman",
+                "desenhistas": "George Pérez",
+                "data": "06/11/1985"
+            },
+            {
+                "nome": "Crisis on Infinite Earths #9",
+                "autores": "Marv Wolfman",
+                "desenhistas": "George Pérez",
+                "data": "04/12/1985"
+            },
+            {
+                "nome": "Crisis on Infinite Earths #10",
+                "autores": "Marv Wolfman",
+                "desenhistas": "George Pérez",
+                "data": "01/01/1986"
+            },
+            {
+                "nome": "Crisis on Infinite Earths #11",
+                "autores": "Marv Wolfman",
+                "desenhistas": "George Pérez",
+                "data": "05/02/1986"
+            },
+            {
+                "nome": "Crisis on Infinite Earths #12",
+                "autores": "Marv Wolfman",
+                "desenhistas": "George Pérez",
+                "data": "05/03/1986"
+            }
+        ]
+    }
+}
+```
