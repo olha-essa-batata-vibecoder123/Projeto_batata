@@ -1,0 +1,109 @@
+Adicione `"nome_alt"` dentro de cada objeto de quadrinho, mantendo a indentação e os demais campos. Os nomes em português ficam assim:
+
+python
+
+```python
+def createFile():
+    dados = {
+        "user_info": [],
+
+        "user_info_admin": {
+            "username": "administrador",
+            "senha": "batatasvoadoras123"
+        },
+
+        "loja_info": {
+            "estoque": {
+                "Marvel Comics": {
+                    "Weapon X": [
+                        {
+                            "nome": "Weapon X",
+                            "nome_alt": "Arma X",
+                            "autores": "Barry Windsor-Smith",
+                            "desenhistas": "Barry Windsor-Smith",
+                            "data": "1991"
+                        },
+                        {
+                            "nome": "The Shiva Scenario",
+                            "nome_alt": "O Cenário Shiva",
+                            "autores": "Larry Hama",
+                            "desenhistas": "Marc Silvestri",
+                            "data": "1991–1992"
+                        },
+                        {
+                            "nome": "Weapon X: The Draft – Wild Child",
+                            "nome_alt": "Arma X: O Recrutamento – Selvagem",
+                            "autores": "Frank Tieri",
+                            "desenhistas": "Georges Jeanty",
+                            "data": "2002"
+                        },
+                        {
+                            "nome": "Weapon X",
+                            "nome_alt": "Arma X",
+                            "autores": "Greg Pak",
+                            "desenhistas": "Greg Land e outros",
+                            "data": "2017–2018"
+                        }
+                    ],
+
+                    "Secret Wars": [
+                        {
+                            "nome": "Marvel Super Heroes: Secret Wars #1–12",
+                            "nome_alt": "Super-Heróis Marvel: Guerras Secretas #1–12",
+                            "autores": "Jim Shooter",
+                            "desenhistas": "Mike Zeck",
+                            "data": "1984–1985"
+                        },
+                        {
+                            "nome": "Secret Wars II #1–9",
+                            "nome_alt": "Guerras Secretas II #1–9",
+                            "autores": "Jim Shooter",
+                            "desenhistas": "Al Milgrom",
+                            "data": "1985–1986"
+                        },
+                        {
+                            "nome": "Secret Wars #1–9",
+                            "nome_alt": "Guerras Secretas #1–9",
+                            "autores": "Jonathan Hickman",
+                            "desenhistas": "Esad Ribić",
+                            "data": "2015–2016"
+                        }
+                    ],
+
+                    "Civil War": [
+                        {
+                            "nome": "Civil War #1–7",
+                            "nome_alt": "Guerra Civil #1–7",
+                            "autores": "Mark Millar",
+                            "desenhistas": "Steve McNiven",
+                            "data": "2006–2007"
+                        },
+                        {
+                            "nome": "Civil War: Front Line #1–11",
+                            "nome_alt": "Guerra Civil: Linha de Frente #1–11",
+                            "autores": "Paul Jenkins",
+                            "desenhistas": "Ramon Bachs / Steve Lieber",
+                            "data": "2006–2007"
+                        },
+                        {
+                            "nome": "Civil War: The Confession",
+                            "nome_alt": "Guerra Civil: A Confissão",
+                            "autores": "Brian Michael Bendis",
+                            "desenhistas": "Alex Maleev",
+                            "data": "2007"
+                        },
+                        {
+                            "nome": "Civil War: The Initiative",
+                            "nome_alt": "Guerra Civil: A Iniciativa",
+                            "autores": "Brian Michael Bendis / Warren Ellis",
+                            "desenhistas": "Marc Silvestri",
+                            "data": "2007"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+```
+
+Observação: `nome` mantém o título original e `nome_alt` contém a tradução em português.
