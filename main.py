@@ -9,16 +9,11 @@ def createFile():
             "senha" : "batatasvoadoras123"
         },
         "loja_info": {
-            "estoque": {
-                "hq": None,
-                "autor": None,
-                "data": None
-            },
-            "carrinho": {
-                "usuario": {
-                    "hqs_selecionados": None
+            "estoque": [
+                {
+                    
                 }
-            }
+            ]
         }
     }
 
@@ -46,22 +41,22 @@ def signUp():
         return
         
     for user in dados["user_info"]:
-        if (username == user["username"] and senha == user["senha"]):
+        if username == user["username"]:
             print("Nome de usuário já cadastrado. Tente novamente.")
             signUp()
 
     new_user = {
         "nome": nome,
         "username": username,
-        "senha": senha
+        "senha": senha,
+        "carrinho" : [] 
     }
     dados["user_info"].append(new_user)
 
     with open('dados.json', 'w', encoding='utf-8') as file:
         json.dump(dados, file)
 
-    print("Cadastro realizado com sucesso!\nIniciando menu principal...\n")
-    print("Bem-vindo ao menu principal da loja!")
+    print(f"Cadastro realizado com sucesso!\nBem-vindo(a), {user["nome"]}")
     menu_principal()
 
     return
@@ -74,7 +69,7 @@ def logIn():
     dados = openFile()
     for user in dados["user_info"]:
         if (username == user["username"] and senha == user["senha"]):
-            print("Login realizado com sucesso!\nBem-vindo(a), {}!".format(user["nome"]))
+            print(f"Login realizado com sucesso!\nBem-vindo(a), {user["nome"]}!")
             return
     print("Nome de usuário ou senha incorretos. Tente novamente.")
     logIn()
@@ -140,6 +135,10 @@ def menu_admin():
         elif value == 4:
             exit()
     return 
+
+def searchSys():
+    dados = openFile()
+
 
 def main(): ##Função de inicialização
     try:
