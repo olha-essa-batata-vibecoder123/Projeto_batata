@@ -1,38 +1,128 @@
-import json ##Biblioteca para arquivos. (Banco de Dados).
+import json 
 
-def createFile(): ## Função para criar o arquivo (BD).
+def createFile():
     dados = {
         "user_info": [],
 
         "user_info_admin": {
-            "username" : "administrador",
-            "senha" : "batatasvoadoras123"
+            "username": "administrador",
+            "senha": "batatasvoadoras123"
         },
+
         "loja_info": {
             "estoque": {
-                "hq": None,
-                "autor": None,
-                "data": None
-            },
-            "carrinho": {
-                "usuario": {
-                    "hqs_selecionados": None
+                "DC Comics": {
+                    "Crise nas Infinitas Terras / Crisis on Infinite Earths": [
+                        {
+                            "nome": "Crisis on Infinite Earths #1",
+                            "nome_alt": "Crise nas Infinitas Terras #1",
+                            "autores": "Marv Wolfman",
+                            "desenhistas": "George Pérez",
+                            "data": "03/04/1985"
+                        },
+
+                        {
+                            "nome": "Crisis on Infinite Earths #2",
+                            "nome_alt": "Crise nas Infinitas Terras #2",
+                            "autores": "Marv Wolfman",
+                            "desenhistas": "George Pérez",
+                            "data": "01/05/1985"
+                        },
+
+                        {
+                            "nome": "Crisis on Infinite Earths #3",
+                            "nome_alt": "Crise nas Infinitas Terras #3",
+                            "autores": "Marv Wolfman",
+                            "desenhistas": "George Pérez",
+                            "data": "05/06/1985"
+                        },
+
+                        {
+                            "nome": "Crisis on Infinite Earths #4",
+                            "nome_alt": "Crise nas Infinitas Terras #4",
+                            "autores": "Marv Wolfman",
+                            "desenhistas": "George Pérez",
+                            "data": "03/07/1985"
+                        },
+
+                        {
+                            "nome": "Crisis on Infinite Earths #5",
+                            "nome_alt": "Crise nas Infinitas Terras #5",
+                            "autores": "Marv Wolfman",
+                            "desenhistas": "George Pérez",
+                            "data": "07/08/1985"
+                        },
+
+                        {
+                            "nome": "Crisis on Infinite Earths #6",
+                            "nome_at": "Crise nas Infinitas Terras #6",
+                            "autores": "Marv Wolfman",
+                            "desenhistas": "George Pérez",
+                            "data": "04/09/1985"
+                        },
+
+                        {
+                            "nome": "Crisis on Infinite Earths #7",
+                            "nome_alt": "Crise nas Infinitas Terras #7",
+                            "autores": "Marv Wolfman",
+                            "desenhistas": "George Pérez",
+                            "data": "02/10/1985"
+                        },
+
+                        {
+                            "nome": "Crisis on Infinite Earths #8",
+                            "nome_alt": "Crise nas Infinitas Terras #8",
+                            "autores": "Marv Wolfman",
+                            "desenhistas": "George Pérez",
+                            "data": "06/11/1985"
+                        },
+
+                        {
+                            "nome": "Crisis on Infinite Earths #9",
+                            "nome_alt": "Crise nas Infinitas Terras #9",
+                            "autores": "Marv Wolfman",
+                            "desenhistas": "George Pérez",
+                            "data": "04/12/1985"
+                        },
+
+                        {
+                            "nome": "Crisis on Infinite Earths #10",
+                            "nome_alt": "Crise nas Infinitas Terras #10",
+                            "autores": "Marv Wolfman",
+                            "desenhistas": "George Pérez",
+                            "data": "01/01/1986"
+                        },
+
+                        {
+                            "nome": "Crisis on Infinite Earths #11",
+                            "nome_alt": "Crise nas Infinitas Terras #11",
+                            "autores": "Marv Wolfman",
+                            "desenhistas": "George Pérez",
+                            "data": "05/02/1986"
+                        },
+
+                        {
+                            "nome": "Crisis on Infinite Earths #12",
+                            "nome_alt": "Crise nas Infinitas Terras #12",
+                            "autores": "Marv Wolfman",
+                            "desenhistas": "George Pérez",
+                            "data": "05/03/1986"
+                        }
+                    ]
                 }
             }
         }
     }
 
-    with open('dados.json', 'w', encoding='utf-8') as file:
-        json.dump(dados, file)
-
     return
 
-def openFile(): ## Função para abrir o arquivo (Acessar o BD).
+def openFile(): 
     with open('dados.json', 'r', encoding='utf-8') as file:
         dados = json.load(file)
+    
     return dados
 
-def signUp(): ##Função para cadastrar um novo usuário
+def signUp(): 
     print("Cadastro de usuário")
     nome = input("Digite seu nome completo: ")
     username = input("Digite seu nome de usuário: ")
@@ -41,31 +131,33 @@ def signUp(): ##Função para cadastrar um novo usuário
     dados = openFile()
 
     if username == dados["user_info_admin"]["username"] and senha == dados["user_info_admin"]["senha"]:
-        print("Bem-vindo ao menu de administrador")
+        print("Bem-vindo ao menu de administrador!")
         menu_admin()
+        
         return
         
     for user in dados["user_info"]:
-        if (username == user["username"] and senha == user["senha"]):
+        if username == user["username"]:
             print("Nome de usuário já cadastrado. Tente novamente.")
             signUp()
 
     new_user = {
         "nome": nome,
         "username": username,
-        "senha": senha
+        "senha": senha,
+        "carrinho" : [] 
     }
     dados["user_info"].append(new_user)
 
     with open('dados.json', 'w', encoding='utf-8') as file:
         json.dump(dados, file)
 
-    print("Cadastro realizado com sucesso!\nIniciando menu principal")
-    menu_compras()
+    print(f"Cadastro realizado com sucesso!\nBem-vindo(a), {user["nome"]}")
+    menu_principal()
 
     return
 
-def logIn(): ##Função para realizar login.
+def logIn(): 
     print("Login de usuário")
     username = input("Digite seu nome de usuário: ")
     senha = input("Digite sua senha: ")
@@ -73,23 +165,19 @@ def logIn(): ##Função para realizar login.
     dados = openFile()
     for user in dados["user_info"]:
         if (username == user["username"] and senha == user["senha"]):
-            print("Login realizado com sucesso!\nBem-vindo(a), {}!".format(user["nome"]))
+            print(f"Login realizado com sucesso!\nBem-vindo(a), {user["nome"]}!")
             return
     print("Nome de usuário ou senha incorretos. Tente novamente.")
     logIn()
 
     return
 
-def menu_inicial(): ##Função do menu principal. Todas as outras opções e funções são executadas a partir daqui.
-    print("Bem-vindo ao sistema de gerenciamento da AMALGAMA COMIX!")
-    print("Digite 1 para: Cadastrar usuário")
-    print("Digite 2 para: Realizar login")
-    print("Digite 0 para: Sair")
+def menu_inicial():
     
     value = input("Escolha uma opção: ")
 
     if (not value.isdigit()) or (int(value) not in [0, 1, 2]):
-        print("Opção inválida. Por favor, digite uma entrada válida (0, 1 ou 2).")
+        print("Opção inválida. Por favor, digite uma entrada válida (0, 1 ou 2): ")
         menu_inicial()
     else:
         value = int(value)
@@ -99,13 +187,54 @@ def menu_inicial(): ##Função do menu principal. Todas as outras opções e fun
             logIn()
         elif value == 0:
             print("Encerrando o sistema. Até a próxima leitura!")
+            exit()
     return
 
-def menu_compras():
-    return 0
+def menu_principal():
+    print("Você pode:\n[1]Pesquisar obras\n[2]Verificar o carrinho\n[3]Encerrar sessão(voltar ao menu inicial)\n[4]Sair do programa")
+
+    value = input("Escolha uma opção: ")
+
+    if (not value.isdigit()) or (int(value) not in [0, 1, 2, 3, 4]):
+        print("Opção inválida. Por favor, digite uma entrada válida (0, 1 2, 3 ou 4): ")
+        menu_principal()
+    else:
+        value = int(value)
+
+        if value == 1:
+            searchSys()
+        elif value == 2:
+            shoppingList()
+        elif value == 3:
+            menu_inicial()
+        elif value == 4:
+            exit()
+    return 
 
 def menu_admin():
-    return 0
+    print("Você pode:\n[1]Verificar o estoque\n[2]Editar o estoque\n[3]Encerrar sessão(voltar ao menu inicial)\n[4]Sair do programa")
+
+    value = input("Escolha uma opção: ")
+
+    if (not value.isdigit()) or (int(value) not in [0, 1, 2, 3, 4]):
+            print("Opção inválida. Por favor, digite uma entrada válida (0, 1, 2, 3 ou 4): ")
+            menu_admin()
+    else:
+        value = int(value)
+
+        if value == 1:
+            stockCheck()
+        elif value == 2:
+            stockEditing()
+        elif value ==3:
+            menu_inicial()
+        elif value == 4:
+            exit()
+    return 
+
+def searchSys():
+    dados = openFile()
+
 
 def main(): ##Função de inicialização
     try:
@@ -113,6 +242,10 @@ def main(): ##Função de inicialização
             pass
     except FileNotFoundError:
         createFile()
+    print("Bem-vindo ao sistema de gerenciamento da AMALGAMA COMIX!")
+    print("Digite 1 para: Cadastrar usuário")
+    print("Digite 2 para: Realizar login")
+    print("Digite 0 para: Sair")
     menu_inicial()
 
-main()##Inicialização.
+main()
