@@ -1,0 +1,277 @@
+def createFile():
+    dados = {
+        "user_info": [],
+
+        "user_info_admin": {
+            "username": "administrador",
+            "senha": "batatasvoadoras123"
+        },
+
+        "loja_info": {
+            "estoque": {
+                "DC Comics": {
+                    "A Game of You": [
+                        {
+                            "nome": "Sandman: Over the Sea to Sky #36",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Shawn McManus",
+                            "data": "18/02/1992"
+                        },
+
+                        {
+                            "nome": "Sandman: I Woke Up and One of Us Was Crying #37",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Shawn McManus",
+                            "data": "24/03/1992"
+                        }
+                    ],
+
+                    "Brief Lives": [
+                        {
+                            "nome": "Sandman: Brief Lives – Chapter 1 #41",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Jill Thompson",
+                            "data": "21/07/1992"
+                        },
+
+                        {
+                            "nome": "Sandman: Brief Lives – Chapter 2 #42",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Jill Thompson",
+                            "data": "18/08/1992"
+                        },
+
+                        {
+                            "nome": "Sandman: Brief Lives – Chapter 3 #43",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Jill Thompson",
+                            "data": "29/09/1992"
+                        },
+
+                        {
+                            "nome": "Sandman: Brief Lives – Chapter 4 #44",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Jill Thompson",
+                            "data": "27/10/1992"
+                        },
+
+                        {
+                            "nome": "Sandman: Brief Lives – Chapter 5 #45",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Jill Thompson",
+                            "data": "24/11/1992"
+                        },
+
+                        {
+                            "nome": "Sandman: Brief Lives – Chapter 6 #46",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Jill Thompson",
+                            "data": "23/12/1992"
+                        },
+
+                        {
+                            "nome": "Sandman: Brief Lives – Chapter 7 #47",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Jill Thompson",
+                            "data": "19/01/1993"
+                        },
+
+                        {
+                            "nome": "Sandman: Brief Lives – Chapter 8 #48",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Jill Thompson",
+                            "data": "16/02/1993"
+                        },
+
+                        {
+                            "nome": "Sandman: Brief Lives – Chapter 9 #49",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Jill Thompson",
+                            "data": "23/03/1993"
+                        }
+                    ],
+
+                    "World's End": [
+                        {
+                            "nome": "Sandman: A Tale of Two Cities #51",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Bryan Talbot",
+                            "data": "18/05/1993"
+                        },
+
+                        {
+                            "nome": "Sandman: The Tale of Cluracan #52",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Bryan Talbot",
+                            "data": "22/06/1993"
+                        },
+
+                        {
+                            "nome": "Sandman: Hob's Leviathan #53",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Bryan Talbot",
+                            "data": "20/07/1993"
+                        },
+
+                        {
+                            "nome": "Sandman: The Golden Boy #54",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Mike Allred",
+                            "data": "24/08/1993"
+                        },
+
+                        {
+                            "nome": "Sandman: Cerements #55",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Bryan Talbot",
+                            "data": "28/09/1993"
+                        },
+
+                        {
+                            "nome": "Sandman: World's End #56",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Bryan Talbot",
+                            "data": "02/11/1993"
+                        }
+                    ],
+
+                    "The Kindly Ones": [
+                        {
+                            "nome": "Sandman: The Kindly Ones – Chapter 1 #57",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Marc Hempel",
+                            "data": "28/12/1993"
+                        },
+
+                        {
+                            "nome": "Sandman: The Kindly Ones – Chapter 2 #58",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Marc Hempel",
+                            "data": "08/02/1994"
+                        },
+
+                        {
+                            "nome": "Sandman: The Kindly Ones – Chapter 3 #59",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Marc Hempel",
+                            "data": "29/03/1994"
+                        },
+
+                        {
+                            "nome": "Sandman: The Kindly Ones – Chapter 4 #60",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Marc Hempel",
+                            "data": "26/04/1994"
+                        },
+
+                        {
+                            "nome": "Sandman: The Kindly Ones – Chapter 5 #61",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Marc Hempel",
+                            "data": "14/06/1994"
+                        },
+
+                        {
+                            "nome": "Sandman: The Kindly Ones – Chapter 6 #62",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Dean Ormston",
+                            "data": "12/07/1994"
+                        },
+
+                        {
+                            "nome": "Sandman: The Kindly Ones – Chapter 7 #63",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Marc Hempel",
+                            "data": "09/08/1994"
+                        },
+
+                        {
+                            "nome": "Sandman: The Kindly Ones – Chapter 8 #64",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Teddy Kristiansen",
+                            "data": "18/10/1994"
+                        },
+
+                        {
+                            "nome": "Sandman: The Kindly Ones – Chapter 9 #65",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Marc Hempel",
+                            "data": "08/11/1994"
+                        },
+
+                        {
+                            "nome": "Sandman: The Kindly Ones – Chapter 10 #66",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Marc Hempel",
+                            "data": "20/12/1994"
+                        },
+
+                        {
+                            "nome": "Sandman: The Kindly Ones – Chapter 11 #67",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Marc Hempel",
+                            "data": "07/02/1995"
+                        },
+
+                        {
+                            "nome": "Sandman: The Kindly Ones – Chapter 12 #68",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Marc Hempel",
+                            "data": "21/03/1995"
+                        },
+
+                        {
+                            "nome": "Sandman: The Kindly Ones – Chapter 13 #69",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Marc Hempel",
+                            "data": "09/05/1995"
+                        }
+                    ],
+
+                    "The Wake": [
+                        {
+                            "nome": "Sandman: The Wake – Which Occurs in the Wake of What Has Gone Before #70",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Marc Hempel",
+                            "data": "21/06/1995"
+                        },
+
+                        {
+                            "nome": "Sandman: The Wake – In Which a Wake Is Held #71",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Michael Zulli",
+                            "data": "02/08/1995"
+                        },
+
+                        {
+                            "nome": "Sandman: The Wake – In Which We Wake #72",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Michael Zulli",
+                            "data": "06/09/1995"
+                        },
+
+                        {
+                            "nome": "Sandman: The Wake – Sunday Mourning #73",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Marc Hempel",
+                            "data": "22/11/1995"
+                        },
+
+                        {
+                            "nome": "Sandman: Exiles #74",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Marc Hempel",
+                            "data": "10/01/1996"
+                        },
+
+                        {
+                            "nome": "Sandman: The Tempest #75",
+                            "autores": "Neil Gaiman",
+                            "desenhistas": "Bryan Talbot",
+                            "data": "27/03/1996"
+                        }
+                    ]
+                }
+            }
+        }
+    }
