@@ -1,0 +1,464 @@
+
+{
+    "DC Comics": {
+        "Sandman": [
+            {
+                "nome": "Sandman: The Sleep of the Just",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Sam Kieth",
+                "data": "29/11/1988"
+            },
+            {
+                "nome": "Sandman: Imperfect Hosts",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Sam Kieth",
+                "data": "10/01/1989"
+            },
+            {
+                "nome": "Sandman: Dream a Little Dream of Me",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Sam Kieth",
+                "data": "31/01/1989"
+            },
+            {
+                "nome": "Sandman: A Hope in Hell",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Sam Kieth",
+                "data": "28/02/1989"
+            },
+            {
+                "nome": "Sandman: Passengers",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Sam Kieth",
+                "data": "04/04/1989"
+            },
+            {
+                "nome": "Sandman: 24 Hours",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Sam Kieth",
+                "data": "26/04/1989"
+            },
+            {
+                "nome": "Sandman: Sound and Fury",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Sam Kieth",
+                "data": "24/05/1989"
+            },
+            {
+                "nome": "Sandman: The Sound of Her Wings",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Mike Dringenberg",
+                "data": "27/06/1989"
+            },
+            {
+                "nome": "Sandman: Tales in the Sand",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Mike Dringenberg",
+                "data": "01/08/1989"
+            },
+            {
+                "nome": "Sandman: The Doll's House",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Mike Dringenberg",
+                "data": "03/10/1989"
+            },
+            {
+                "nome": "Sandman: Moving In",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Mike Dringenberg",
+                "data": "31/10/1989"
+            },
+            {
+                "nome": "Sandman: Playing House",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Michael Zulli",
+                "data": "28/11/1989"
+            },
+            {
+                "nome": "Sandman: Men of Good Fortune",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Mike Dringenberg",
+                "data": "02/01/1990"
+            },
+            {
+                "nome": "Sandman: Collectors",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Mike Dringenberg",
+                "data": "30/01/1990"
+            },
+            {
+                "nome": "Sandman: Into the Night",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Mike Dringenberg",
+                "data": "20/03/1990"
+            },
+            {
+                "nome": "Sandman: Lost Hearts",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Mike Dringenberg",
+                "data": "24/04/1990"
+            },
+            {
+                "nome": "Sandman: Calliope",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Kelley Jones",
+                "data": "12/06/1990"
+            },
+            {
+                "nome": "Sandman: A Dream of a Thousand Cats",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Kelley Jones",
+                "data": "10/07/1990"
+            },
+            {
+                "nome": "Sandman: A Midsummer Night's Dream",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Charles Vess",
+                "data": "11/09/1990"
+            },
+            {
+                "nome": "Sandman: Façade",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Colleen Doran",
+                "data": "25/09/1990"
+            },
+            {
+                "nome": "Sandman: Season of Mists – Prologue",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Mike Dringenberg",
+                "data": "06/11/1990"
+            },
+            {
+                "nome": "Sandman: Season of Mists – Chapter 1",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Kelley Jones",
+                "data": "27/11/1990"
+            },
+            {
+                "nome": "Sandman: Season of Mists – Chapter 2",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Kelley Jones",
+                "data": "02/01/1991"
+            },
+            {
+                "nome": "Sandman: Season of Mists – Chapter 3",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Kelley Jones",
+                "data": "29/01/1991"
+            },
+            {
+                "nome": "Sandman: Season of Mists – Chapter 4",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Matt Wagner",
+                "data": "26/02/1991"
+            },
+            {
+                "nome": "Sandman: Season of Mists – Chapter 5",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Kelley Jones",
+                "data": "26/03/1991"
+            },
+            {
+                "nome": "Sandman: Season of Mists – Chapter 6",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Kelley Jones",
+                "data": "23/04/1991"
+            },
+            {
+                "nome": "Sandman: Season of Mists – Epilogue",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Mike Dringenberg",
+                "data": "28/05/1991"
+            },
+            {
+                "nome": "Sandman: Thermidor",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Stan Woch",
+                "data": "25/06/1991"
+            },
+            {
+                "nome": "Sandman: August",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Bryan Talbot",
+                "data": "23/07/1991"
+            },
+            {
+                "nome": "Sandman: Three Septembers and a January",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Shawn McManus",
+                "data": "03/09/1991"
+            },
+            {
+                "nome": "Sandman: Slaughter on Fifth Avenue",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Shawn McManus",
+                "data": "24/09/1991"
+            },
+            {
+                "nome": "Sandman: Lullabies of Broadway",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Shawn McManus",
+                "data": "29/10/1991"
+            },
+            {
+                "nome": "Sandman: The Hunt",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Colleen Doran",
+                "data": "19/11/1991"
+            },
+            {
+                "nome": "Sandman: Soft Places",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Shawn McManus",
+                "data": "17/12/1991"
+            },
+            {
+                "nome": "Sandman: Over the Sea to Sky",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Shawn McManus",
+                "data": "18/02/1992"
+            },
+            {
+                "nome": "Sandman: I Woke Up and One of Us Was Crying",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Shawn McManus",
+                "data": "24/03/1992"
+            },
+            {
+                "nome": "Sandman: The Hunt",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Duncan Eagleson",
+                "data": "21/04/1992"
+            },
+            {
+                "nome": "Sandman: Soft Places",
+                "autores": "Neil Gaiman",
+                "desenhistas": "John Watkiss",
+                "data": "19/05/1992"
+            },
+            {
+                "nome": "Sandman: The Parliament of Rooks",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Jill Thompson",
+                "data": "23/06/1992"
+            },
+            {
+                "nome": "Sandman: Brief Lives – Chapter 1",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Jill Thompson",
+                "data": "21/07/1992"
+            },
+            {
+                "nome": "Sandman: Brief Lives – Chapter 2",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Jill Thompson",
+                "data": "18/08/1992"
+            },
+            {
+                "nome": "Sandman: Brief Lives – Chapter 3",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Jill Thompson",
+                "data": "29/09/1992"
+            },
+            {
+                "nome": "Sandman: Brief Lives – Chapter 4",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Jill Thompson",
+                "data": "27/10/1992"
+            },
+            {
+                "nome": "Sandman: Brief Lives – Chapter 5",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Jill Thompson",
+                "data": "24/11/1992"
+            },
+            {
+                "nome": "Sandman: Brief Lives – Chapter 6",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Jill Thompson",
+                "data": "23/12/1992"
+            },
+            {
+                "nome": "Sandman: Brief Lives – Chapter 7",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Jill Thompson",
+                "data": "19/01/1993"
+            },
+            {
+                "nome": "Sandman: Brief Lives – Chapter 8",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Jill Thompson",
+                "data": "16/02/1993"
+            },
+            {
+                "nome": "Sandman: Brief Lives – Chapter 9",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Jill Thompson",
+                "data": "23/03/1993"
+            },
+            {
+                "nome": "Sandman: Ramadan",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Scott McCloud",
+                "data": "20/04/1993"
+            },
+            {
+                "nome": "Sandman: A Tale of Two Cities",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Bryan Talbot",
+                "data": "18/05/1993"
+            },
+            {
+                "nome": "Sandman: The Tale of Cluracan",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Bryan Talbot",
+                "data": "22/06/1993"
+            },
+            {
+                "nome": "Sandman: Hob's Leviathan",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Bryan Talbot",
+                "data": "20/07/1993"
+            },
+            {
+                "nome": "Sandman: The Golden Boy",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Mike Allred",
+                "data": "24/08/1993"
+            },
+            {
+                "nome": "Sandman: Cerements",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Bryan Talbot",
+                "data": "28/09/1993"
+            },
+            {
+                "nome": "Sandman: World's End",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Bryan Talbot",
+                "data": "02/11/1993"
+            },
+            {
+                "nome": "Sandman: The Kindly Ones – Chapter 1",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Marc Hempel",
+                "data": "28/12/1993"
+            },
+            {
+                "nome": "Sandman: The Kindly Ones – Chapter 2",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Marc Hempel",
+                "data": "08/02/1994"
+            },
+            {
+                "nome": "Sandman: The Kindly Ones – Chapter 3",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Marc Hempel",
+                "data": "29/03/1994"
+            },
+            {
+                "nome": "Sandman: The Kindly Ones – Chapter 4",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Marc Hempel",
+                "data": "26/04/1994"
+            },
+            {
+                "nome": "Sandman: The Kindly Ones – Chapter 5",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Marc Hempel",
+                "data": "14/06/1994"
+            },
+            {
+                "nome": "Sandman: The Kindly Ones – Chapter 6",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Dean Ormston",
+                "data": "12/07/1994"
+            },
+            {
+                "nome": "Sandman: The Kindly Ones – Chapter 7",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Marc Hempel",
+                "data": "09/08/1994"
+            },
+            {
+                "nome": "Sandman: The Kindly Ones – Chapter 8",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Teddy Kristiansen",
+                "data": "18/10/1994"
+            },
+            {
+                "nome": "Sandman: The Kindly Ones – Chapter 9",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Marc Hempel",
+                "data": "08/11/1994"
+            },
+            {
+                "nome": "Sandman: The Kindly Ones – Chapter 10",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Marc Hempel",
+                "data": "20/12/1994"
+            },
+            {
+                "nome": "Sandman: The Kindly Ones – Chapter 11",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Marc Hempel",
+                "data": "07/02/1995"
+            },
+            {
+                "nome": "Sandman: The Kindly Ones – Chapter 12",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Marc Hempel",
+                "data": "21/03/1995"
+            },
+            {
+                "nome": "Sandman: The Kindly Ones – Chapter 13",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Marc Hempel",
+                "data": "09/05/1995"
+            },
+            {
+                "nome": "Sandman: The Wake – Which Occurs in the Wake of What Has Gone Before",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Marc Hempel",
+                "data": "21/06/1995"
+            },
+            {
+                "nome": "Sandman: The Wake – In Which a Wake Is Held",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Michael Zulli",
+                "data": "02/08/1995"
+            },
+            {
+                "nome": "Sandman: The Wake – In Which We Wake",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Michael Zulli",
+                "data": "06/09/1995"
+            },
+            {
+                "nome": "Sandman: The Wake – Sunday Mourning",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Marc Hempel",
+                "data": "22/11/1995"
+            },
+            {
+                "nome": "Sandman: Exiles",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Marc Hempel",
+                "data": "10/01/1996"
+            },
+            {
+                "nome": "Sandman: The Tempest",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Bryan Talbot",
+                "data": "27/03/1996"
+            },
+            {
+                "nome": "Sandman Special: The Song of Orpheus #1",
+                "autores": "Neil Gaiman",
+                "desenhistas": "P. Craig Russell",
+                "data": "08/10/1991"
+            }
+        ]
+    }
+}
+```
