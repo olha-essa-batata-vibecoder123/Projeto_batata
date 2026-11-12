@@ -1,0 +1,78 @@
+json
+
+```json
+[
+  {
+    "nome": "Weapon X",
+    "autores": "Barry Windsor-Smith",
+    "desenhistas": "Barry Windsor-Smith",
+    "data": "24/01/1991"
+  },
+  {
+    "nome": "The Shiva Scenario",
+    "autores": "Larry Hama",
+    "desenhistas": "Marc Silvestri",
+    "data": "01/11/1991"
+  },
+  {
+    "nome": "X-Men: Weapon X, Lies and Video Tape (Animação)",
+    "autores": "Steven Melching / David McDermott",
+    "desenhistas": "Larry Houston (Diretor)",
+    "data": "11/06/1995"
+  },
+  {
+    "nome": "Weapon X: The Draft – Wild Child",
+    "autores": "Matt Nixon",
+    "desenhistas": "Ethan Van Sciver",
+    "data": "01/10/2002"
+  },
+  {
+    "nome": "Weapon X",
+    "autores": "Greg Pak",
+    "desenhistas": "Greg Land",
+    "data": "12/04/2017"
+  },
+  {
+    "nome": "Marvel Super Heroes: Secret Wars #1",
+    "autores": "Jim Shooter",
+    "desenhistas": "Mike Zeck",
+    "data": "24/01/1984"
+  },
+  {
+    "nome": "Secret Wars II #1",
+    "autores": "Jim Shooter",
+    "desenhistas": "Al Milgrom",
+    "data": "16/04/1985"
+  },
+  {
+    "nome": "Secret Wars (2015) #1",
+    "autores": "Jonathan Hickman",
+    "desenhistas": "Esad Ribić",
+    "data": "06/05/2015"
+  },
+  {
+    "nome": "Civil War #1",
+    "autores": "Mark Millar",
+    "desenhistas": "Steve McNiven",
+    "data": "03/05/2006"
+  },
+  {
+    "nome": "Civil War: Front Line #1",
+    "autores": "Paul Jenkins",
+    "desenhistas": "Ramon Bachs / Steve Lieber",
+    "data": "07/06/2006"
+  },
+  {
+    "nome": "Civil War: The Confession",
+    "autores": "Brian Michael Bendis",
+    "desenhistas": "Alex Maleev",
+    "data": "14/03/2007"
+  },
+  {
+    "nome": "Civil War: The Initiative",
+    "autores": "Brian Michael Bendis / Warren Ellis",
+    "desenhistas": "Marc Silvestri",
+    "data": "07/03/2007"
+  }
+]
+```
