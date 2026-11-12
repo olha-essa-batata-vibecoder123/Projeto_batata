@@ -12,102 +12,114 @@ def createFile():
         "loja_info": {
             "estoque": {
                 "DC Comics": {
-                    "Crise nas Infinitas Terras": [
+                    "Crise nas Infinitas Terras / Crisis on Infinite Earths": [
                         {
-                            "nome": "Crise nas Infinitas Terras #1",
+                            "nome": "Crisis on Infinite Earths #1",
+                            "nome_alt": "Crise nas Infinitas Terras #1",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
                             "data": "03/04/1985"
                         },
-                        
+
                         {
-                            "nome": "Crise nas Infinitas Terras #2",
+                            "nome": "Crisis on Infinite Earths #2",
+                            "nome_alt": "Crise nas Infinitas Terras #2",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
                             "data": "01/05/1985"
                         },
-                        
+
                         {
-                            "nome": "Crise nas Infinitas Terras #3",
+                            "nome": "Crisis on Infinite Earths #3",
+                            "nome_alt": "Crise nas Infinitas Terras #3",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
                             "data": "05/06/1985"
                         },
-                        
+
                         {
-                            "nome": "Crise nas Infinitas Terras #4",
+                            "nome": "Crisis on Infinite Earths #4",
+                            "nome_alt": "Crise nas Infinitas Terras #4",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
                             "data": "03/07/1985"
                         },
-                        
+
                         {
-                            "nome": "Crise nas Infinitas Terras #5",
+                            "nome": "Crisis on Infinite Earths #5",
+                            "nome_alt": "Crise nas Infinitas Terras #5",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
                             "data": "07/08/1985"
                         },
 
                         {
-                            "nome": "Crise nas Infinitas Terras #6",
+                            "nome": "Crisis on Infinite Earths #6",
+                            "nome_at": "Crise nas Infinitas Terras #6",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
                             "data": "04/09/1985"
                         },
 
                         {
-                            "nome": "Crise nas Infinitas Terras #7",
+                            "nome": "Crisis on Infinite Earths #7",
+                            "nome_alt": "Crise nas Infinitas Terras #7",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
                             "data": "02/10/1985"
                         },
 
                         {
-                            "nome": "Crise nas Infinitas Terras #8",
+                            "nome": "Crisis on Infinite Earths #8",
+                            "nome_alt": "Crise nas Infinitas Terras #8",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
                             "data": "06/11/1985"
                         },
 
                         {
-                            "nome": "Crise nas Infinitas Terras #9",
+                            "nome": "Crisis on Infinite Earths #9",
+                            "nome_alt": "Crise nas Infinitas Terras #9",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
                             "data": "04/12/1985"
                         },
 
                         {
-                            "nome": "Crise nas Infinitas Terras #10",
+                            "nome": "Crisis on Infinite Earths #10",
+                            "nome_alt": "Crise nas Infinitas Terras #10",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
                             "data": "01/01/1986"
                         },
 
                         {
-                            "nome": "Crise nas Infinitas Terras #11",
+                            "nome": "Crisis on Infinite Earths #11",
+                            "nome_alt": "Crise nas Infinitas Terras #11",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
                             "data": "05/02/1986"
                         },
 
-
                         {
-                            "nome": "Crise nas Infinitas Terras #12",
+                            "nome": "Crisis on Infinite Earths #12",
+                            "nome_alt": "Crise nas Infinitas Terras #12",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
                             "data": "05/03/1986"
-                        }         
-                    ],
-                    "The Dark Knight": []
+                        }
+                    ]
                 }
             }
         }
     }
+
     return
 
 def openFile(): 
     with open('dados.json', 'r', encoding='utf-8') as file:
         dados = json.load(file)
+    
     return dados
 
 def signUp(): 
@@ -121,6 +133,7 @@ def signUp():
     if username == dados["user_info_admin"]["username"] and senha == dados["user_info_admin"]["senha"]:
         print("Bem-vindo ao menu de administrador!")
         menu_admin()
+        
         return
         
     for user in dados["user_info"]:
