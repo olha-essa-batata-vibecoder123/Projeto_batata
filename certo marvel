@@ -1,0 +1,82 @@
+Entendi. Somente HQs da Marvel, sem animações, mantendo exatamente a estrutura JSON:
+
+json
+
+```json
+{
+  "Marvel Comics": {
+    "Weapon X": [
+      {
+        "nome": "Weapon X",
+        "autores": "Barry Windsor-Smith",
+        "desenhistas": "Barry Windsor-Smith",
+        "data": "1991"
+      },
+      {
+        "nome": "The Shiva Scenario",
+        "autores": "Larry Hama",
+        "desenhistas": "Marc Silvestri",
+        "data": "1991–1992"
+      },
+      {
+        "nome": "Weapon X: The Draft – Wild Child",
+        "autores": "Frank Tieri",
+        "desenhistas": "Georges Jeanty",
+        "data": "2002"
+      },
+      {
+        "nome": "Weapon X",
+        "autores": "Greg Pak",
+        "desenhistas": "Greg Land e outros",
+        "data": "2017–2018"
+      }
+    ],
+    "Secret Wars": [
+      {
+        "nome": "Marvel Super Heroes: Secret Wars #1–12",
+        "autores": "Jim Shooter",
+        "desenhistas": "Mike Zeck",
+        "data": "1984–1985"
+      },
+      {
+        "nome": "Secret Wars II #1–9",
+        "autores": "Jim Shooter",
+        "desenhistas": "Al Milgrom",
+        "data": "1985–1986"
+      },
+      {
+        "nome": "Secret Wars #1–9",
+        "autores": "Jonathan Hickman",
+        "desenhistas": "Esad Ribić",
+        "data": "2015–2016"
+      }
+    ],
+    "Civil War": [
+      {
+        "nome": "Civil War #1–7",
+        "autores": "Mark Millar",
+        "desenhistas": "Steve McNiven",
+        "data": "2006–2007"
+      },
+      {
+        "nome": "Civil War: Front Line #1–11",
+        "autores": "Paul Jenkins",
+        "desenhistas": "Ramon Bachs / Steve Lieber",
+        "data": "2006–2007"
+      },
+      {
+        "nome": "Civil War: The Confession",
+        "autores": "Brian Michael Bendis",
+        "desenhistas": "Alex Maleev",
+        "data": "2007"
+      },
+      {
+        "nome": "Civil War: The Initiative",
+        "autores": "Brian Michael Bendis / Warren Ellis",
+        "desenhistas": "Marc Silvestri",
+        "data": "2007"
+      }
+    ]
+  }
+}
+```
