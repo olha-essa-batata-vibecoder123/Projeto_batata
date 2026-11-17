@@ -1,4 +1,5 @@
-import json 
+import json
+
 
 def createFile():
     dados = {
@@ -11,115 +12,129 @@ def createFile():
 
         "loja_info": {
             "estoque": {
+                "Marvel Comics": {
+                    "Weapon X": [
+                        {
+                            "nome": "Weapon X",
+                            "nome_alt": "Arma X",
+                            "autores": "Barry Windsor-Smith",
+                            "desenhistas": "Barry Windsor-Smith",
+                            "data": "1991",
+                            "precos": None
+                        },
+                        {
+                            "nome": "The Shiva Scenario",
+                            "nome_alt": "O Cenário Shiva",
+                            "autores": "Larry Hama",
+                            "desenhistas": "Marc Silvestri",
+                            "data": "1991–1992",
+                            "precos": None
+                        },
+                        {
+                            "nome": "Weapon X: The Draft – Wild Child",
+                            "nome_alt": "Arma X: O Recrutamento – Selvagem",
+                            "autores": "Frank Tieri",
+                            "desenhistas": "Georges Jeanty",
+                            "data": "2002",
+                            "precos": None
+                        },
+                        {
+                            "nome": "Weapon X",
+                            "nome_alt": "Arma X",
+                            "autores": "Greg Pak",
+                            "desenhistas": "Greg Land e outros",
+                            "data": "2017–2018",
+                            "precos": None
+                        }
+                    ],
+
+                    "Secret Wars": [
+                        {
+                            "nome": "Marvel Super Heroes: Secret Wars #1–12",
+                            "nome_alt": "Super-Heróis Marvel: Guerras Secretas #1–12",
+                            "autores": "Jim Shooter",
+                            "desenhistas": "Mike Zeck",
+                            "data": "1984–1985",
+                            "precos": None
+                        },
+                        {
+                            "nome": "Secret Wars II #1–9",
+                            "nome_alt": "Guerras Secretas II #1–9",
+                            "autores": "Jim Shooter",
+                            "desenhistas": "Al Milgrom",
+                            "data": "1985–1986",
+                            "precos": None
+                        },
+                        {
+                            "nome": "Secret Wars #1–9",
+                            "nome_alt": "Guerras Secretas #1–9",
+                            "autores": "Jonathan Hickman",
+                            "desenhistas": "Esad Ribić",
+                            "data": "2015–2016",
+                            "precos": None
+                        }
+                    ],
+
+                    "Civil War": [
+                        {
+                            "nome": "Civil War #1–7",
+                            "nome_alt": "Guerra Civil #1–7",
+                            "autores": "Mark Millar",
+                            "desenhistas": "Steve McNiven",
+                            "data": "2006–2007",
+                            "precos": None
+                        },
+                        {
+                            "nome": "Civil War: Front Line #1–11",
+                            "nome_alt": "Guerra Civil: Linha de Frente #1–11",
+                            "autores": "Paul Jenkins",
+                            "desenhistas": "Ramon Bachs / Steve Lieber",
+                            "data": "2006–2007",
+                            "precos": None
+                        },
+                        {
+                            "nome": "Civil War: The Confession",
+                            "nome_alt": "Guerra Civil: A Confissão",
+                            "autores": "Brian Michael Bendis",
+                            "desenhistas": "Alex Maleev",
+                            "data": "2007",
+                            "precos": None
+                        },
+                        {
+                            "nome": "Civil War: The Initiative",
+                            "nome_alt": "Guerra Civil: A Iniciativa",
+                            "autores": "Brian Michael Bendis / Warren Ellis",
+                            "desenhistas": "Marc Silvestri",
+                            "data": "2007",
+                            "precos": None
+                        }
+                    ]
+                },
+
                 "DC Comics": {
                     "Crise nas Infinitas Terras / Crisis on Infinite Earths": [
                         {
-                            "nome": "Crisis on Infinite Earths #1",
-                            "nome_alt": "Crise nas Infinitas Terras #1",
+                            "nome": f"Crisis on Infinite Earths #{i}",
+                            "nome_alt": f"Crise nas Infinitas Terras #{i}",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
-                            "data": "03/04/1985",
-                            "precos": None,
-                        },
-
-                        {
-                            "nome": "Crisis on Infinite Earths #2",
-                            "nome_alt": "Crise nas Infinitas Terras #2",
-                            "autores": "Marv Wolfman",
-                            "desenhistas": "George Pérez",
-                            "data": "01/05/1985",
-                            "precos": None,
-                        },
-
-                        {
-                            "nome": "Crisis on Infinite Earths #3",
-                            "nome_alt": "Crise nas Infinitas Terras #3",
-                            "autores": "Marv Wolfman",
-                            "desenhistas": "George Pérez",
-                            "data": "05/06/1985",
-                            "precos": None,
-                        },
-
-                        {
-                            "nome": "Crisis on Infinite Earths #4",
-                            "nome_alt": "Crise nas Infinitas Terras #4",
-                            "autores": "Marv Wolfman",
-                            "desenhistas": "George Pérez",
-                            "data": "03/07/1985",
-                            "precos": None,
-                        },
-
-                        {
-                            "nome": "Crisis on Infinite Earths #5",
-                            "nome_alt": "Crise nas Infinitas Terras #5",
-                            "autores": "Marv Wolfman",
-                            "desenhistas": "George Pérez",
-                            "data": "07/08/1985",
-                            "precos": None,
-                        },
-
-                        {
-                            "nome": "Crisis on Infinite Earths #6",
-                            "nome_at": "Crise nas Infinitas Terras #6",
-                            "autores": "Marv Wolfman",
-                            "desenhistas": "George Pérez",
-                            "data": "04/09/1985",
-                            "precos": None,
-                        },
-
-                        {
-                            "nome": "Crisis on Infinite Earths #7",
-                            "nome_alt": "Crise nas Infinitas Terras #7",
-                            "autores": "Marv Wolfman",
-                            "desenhistas": "George Pérez",
-                            "data": "02/10/1985",
-                            "precos": None,
-                        },
-
-                        {
-                            "nome": "Crisis on Infinite Earths #8",
-                            "nome_alt": "Crise nas Infinitas Terras #8",
-                            "autores": "Marv Wolfman",
-                            "desenhistas": "George Pérez",
-                            "data": "06/11/1985",
-                            "precos": None,
-                        },
-
-                        {
-                            "nome": "Crisis on Infinite Earths #9",
-                            "nome_alt": "Crise nas Infinitas Terras #9",
-                            "autores": "Marv Wolfman",
-                            "desenhistas": "George Pérez",
-                            "data": "04/12/1985",
-                            "precos": None,
-                        },
-
-                        {
-                            "nome": "Crisis on Infinite Earths #10",
-                            "nome_alt": "Crise nas Infinitas Terras #10",
-                            "autores": "Marv Wolfman",
-                            "desenhistas": "George Pérez",
-                            "data": "01/01/1986",
-                            "precos": None,
-                        },
-
-                        {
-                            "nome": "Crisis on Infinite Earths #11",
-                            "nome_alt": "Crise nas Infinitas Terras #11",
-                            "autores": "Marv Wolfman",
-                            "desenhistas": "George Pérez",
-                            "data": "05/02/1986",
-                            "precos": None,
-                        },
-
-                        {
-                            "nome": "Crisis on Infinite Earths #12",
-                            "nome_alt": "Crise nas Infinitas Terras #12",
-                            "autores": "Marv Wolfman",
-                            "desenhistas": "George Pérez",
-                            "data": "05/03/1986",
+                            "data": data,
                             "precos": None
                         }
+                        for i, data in enumerate([
+                            "03/04/1985",
+                            "01/05/1985",
+                            "05/06/1985",
+                            "03/07/1985",
+                            "07/08/1985",
+                            "04/09/1985",
+                            "02/10/1985",
+                            "06/11/1985",
+                            "04/12/1985",
+                            "01/01/1986",
+                            "05/02/1986",
+                            "05/03/1986"
+                        ], start=1)
                     ]
                 }
             }
@@ -128,14 +143,22 @@ def createFile():
 
     return dados
 
-def openFile(): 
+
+def saveFile(dados):
+    with open('dados.json', 'w', encoding='utf-8') as file:
+        json.dump(dados, file, ensure_ascii=False, indent=4)
+
+
+def openFile():
     with open('dados.json', 'r', encoding='utf-8') as file:
         dados = json.load(file)
-    
+
     return dados
 
-def signUp(): 
+
+def signUp():
     print("Cadastro de usuário")
+
     nome = input("Digite seu nome completo: ")
     username = input("Digite seu nome de usuário: ")
     senha = input("Digite sua senha: ")
@@ -145,125 +168,144 @@ def signUp():
     if username == dados["user_info_admin"]["username"] and senha == dados["user_info_admin"]["senha"]:
         print("Bem-vindo ao menu de administrador!")
         menu_admin()
-        
         return
-        
+
     for user in dados["user_info"]:
         if username == user["username"]:
-            print("Nome de usuário já cadastrado. Tente novamente.")
-            signUp()
+            print("Nome de usuário já cadastrado.")
+            return
 
     new_user = {
         "nome": nome,
         "username": username,
         "senha": senha,
-        "carrinho" : [] 
+        "carrinho": []
     }
+
     dados["user_info"].append(new_user)
+    saveFile(dados)
 
-    with open('dados.json', 'w', encoding='utf-8') as file:
-        json.dump(dados, file)
+    print(f"Cadastro realizado com sucesso!\nBem-vindo(a), {new_user['nome']}!")
 
-    print(f"Cadastro realizado com sucesso!\nBem-vindo(a), {user["nome"]}")
-    menu_principal()
+    menu_principal(username)
 
-    return
 
-def logIn(): 
+def logIn():
     print("Login de usuário")
+
     username = input("Digite seu nome de usuário: ")
     senha = input("Digite sua senha: ")
 
     dados = openFile()
-    for user in dados["user_info"]:
-        if (username == user["username"] and senha == user["senha"]):
-            print(f"Login realizado com sucesso!\nBem-vindo(a), {user["nome"]}!")
-            return
-    print("Nome de usuário ou senha incorretos. Tente novamente.")
-    logIn()
 
-    return
+    if username == dados["user_info_admin"]["username"] and senha == dados["user_info_admin"]["senha"]:
+        print("Bem-vindo ao menu de administrador!")
+        menu_admin()
+        return
+
+    for user in dados["user_info"]:
+        if username == user["username"] and senha == user["senha"]:
+            print(f"Login realizado com sucesso!\nBem-vindo(a), {user['nome']}!")
+            menu_principal(username)
+            return
+
+    print("Nome de usuário ou senha incorretos.")
+    menu_inicial()
+
 
 def menu_inicial():
-    
+    print("\n################ MENU INICIAL ################")
+    print("[1] Cadastrar usuário")
+    print("[2] Realizar login")
+    print("[0] Sair")
+
     value = input("Escolha uma opção: ")
 
-    if (not value.isdigit()) or (int(value) not in [0, 1, 2]):
-        print("Opção inválida. Por favor, digite uma entrada válida (0, 1 ou 2): ")
+    if value not in ["0", "1", "2"]:
+        print("Opção inválida.")
         menu_inicial()
-    else:
-        value = int(value)
-        if value == 1:
-            signUp()
-        elif value == 2:
-            logIn()
-        elif value == 0:
-            print("Encerrando o sistema. Até a próxima leitura!")
-            exit()
-    return
 
-def menu_principal():
-    print("Você pode:\n[1]Pesquisar obras\n[2]Verificar o carrinho\n[3]Encerrar sessão(voltar ao menu inicial)\n[4]Sair do programa")
+    elif value == "1":
+        signUp()
+
+    elif value == "2":
+        logIn()
+
+    elif value == "0":
+        print("Encerrando o sistema. Até a próxima leitura!")
+
+
+def menu_principal(username):
+    print("\n################ MENU PRINCIPAL ################")
+    print("[1] Pesquisar obras")
+    print("[2] Verificar o carrinho")
+    print("[3] Encerrar sessão")
+    print("[4] Sair do programa")
 
     value = input("Escolha uma opção: ")
 
-    if (not value.isdigit()) or (int(value) not in [0, 1, 2, 3, 4]):
-        print("Opção inválida. Por favor, digite uma entrada válida (0, 1 2, 3 ou 4): ")
-        menu_principal()
-    else:
-        value = int(value)
+    if value == "1":
+        searchSys(username)
 
-        if value == 1:
-            searchSys()
-        elif value == 2:
-            shoppingList()
-        elif value == 3:
-            menu_inicial()
-        elif value == 4:
-            exit()
-    return 
+    elif value == "2":
+        shoppingList(username)
+
+    elif value == "3":
+        menu_inicial()
+
+    elif value == "4":
+        exit()
+
+    else:
+        print("Opção inválida.")
+        menu_principal(username)
+
 
 def menu_admin():
-    print("Você pode:\n[1]Verificar o estoque\n[2]Editar o estoque\n[3]Encerrar sessão(voltar ao menu inicial)\n[4]Sair do programa")
+    print("\n################ MENU ADMINISTRADOR ################")
+    print("[1] Verificar o estoque")
+    print("[2] Editar o estoque")
+    print("[3] Encerrar sessão")
+    print("[4] Sair do programa")
 
     value = input("Escolha uma opção: ")
 
-    if (not value.isdigit()) or (int(value) not in [0, 1, 2, 3, 4]):
-            print("Opção inválida. Por favor, digite uma entrada válida (0, 1, 2, 3 ou 4): ")
-            menu_admin()
-    else:
-        value = int(value)
+    if value == "1":
+        stockCheck()
 
-        if value == 1:
-            stockCheck()
-        elif value == 2:
-            stockEditing()
-        elif value ==3:
-            menu_inicial()
-        elif value == 4:
-            exit()
-    return 
+    elif value == "2":
+        stockEditing()
+
+    elif value == "3":
+        menu_inicial()
+
+    elif value == "4":
+        exit()
+
+    else:
+        print("Opção inválida.")
+        menu_admin()
+
 
 def showStock():
     dados = openFile()
     estoque = dados["loja_info"]["estoque"]
 
-    print("################### Coleção de obras ####################\n")
+    print("\n################### COLEÇÃO DE OBRAS ####################")
 
-    for editora, saga in estoque.items():
+    for editora, colecoes in estoque.items():
         print(f"\n################### {editora} ###################")
 
-        for nome_saga, quadrinhos in saga.items():
-            print(f"\n################### {saga} ###################")
+        for nome_saga, quadrinhos in colecoes.items():
+            print(f"\n################### {nome_saga} ###################")
 
             for quadrinho in quadrinhos:
-                print(f"{quadrinho["nome"]} - {quadrinho["autores"]}")
-    
+                print(f"{quadrinho['nome']} - {quadrinho['autores']}")
+
     return
 
 
 def comicValidation(comic):
-
     dados = openFile()
     estoque = dados["loja_info"]["estoque"]
 
@@ -277,71 +319,144 @@ def comicValidation(comic):
                 nome_alternativo = quadrinho.get("nome_alt", "").lower()
 
                 if comic.lower() == nome_original or comic.lower() == nome_alternativo:
-
                     return quadrinho
 
     return None
 
 
-def searchSys():   
+def searchSys(username):
     showStock()
 
-    comic = input("Essas são as opções de obra para leitura.\nDigite o nome da obra para ver seus detalhes: ")
+    comic = input("\nDigite o nome da obra para ver seus detalhes: ")
 
-    if comicValidation(comic):
-        showComicDetails()
+    resultado = comicValidation(comic)
 
-    return
+    if resultado:
+        showComicDetails(resultado, username)
 
-def showComicDetails(comic):
-    dados = openFile()
-    estoque = dados["loja_info"]["estoque"]
-
-    print("------ Detalhes do produto ------\n")
-    
-    print(f"Nome da Obra: {comic["nome"]}")
-    print(f"Autor(s) da Obra: {comic["autores"]}")
-    print(f"Desenhista(s) da Obra: {comic["desenhistas"]}")
-    print(f"Data de lançamento da Obra: {comic["data"]}")
-    print(f"Preço da Obra (USD/BRL): {comic["precos"]}")
-
-    print("Para se dirigir à opção de compra digite [1]\nPara adicionar o item ao carrinho digite [2]\nPara voltar ao menu anterior digite [0]\n")
-    opcao = ("O que deseja fazer?: ")
-
-    if (opcao.isdigit()) or not(int(opcao) > 0 or int(opcao) < 3):
-        print("Por favor tente novamente. Digite uma opção válida.")
-        showComicDetails(comic)
     else:
+        print("Obra não encontrada.")
 
-        if int(opcao) == 1:
-            buyMenu()
-        elif int(opcao) == 2:
-            print("Item adicionado com sucesso")
+    menu_principal(username)
 
-            redirect = ("Deseja ver seus itens no carrinho?(s/n): ")
 
-            if redirect.lower() == 's':
-                shoppingList()
-            elif redirect.lower == '2':
-                print("Entendido. Voltando à lista de obras")
+def showComicDetails(comic, username):
+    print("\n------ DETALHES DO PRODUTO ------")
 
-                searchSys()
+    print(f"Nome da Obra: {comic['nome']}")
+    print(f"Nome Alternativo: {comic.get('nome_alt', 'Não informado')}")
+    print(f"Autor(es): {comic['autores']}")
+    print(f"Desenhista(s): {comic['desenhistas']}")
+    print(f"Data de lançamento: {comic['data']}")
+    print(f"Preço da Obra (USD/BRL): {comic.get('precos', 'Não informado')}")
 
-        elif int(opcao) == 0:
-            searchSys()
+    print("\n[1] Comprar obra")
+    print("[2] Adicionar item ao carrinho")
+    print("[0] Voltar ao menu anterior")
 
-    return
+    opcao = input("O que deseja fazer?: ")
 
-def main(): ##Função de inicialização
+    if opcao == "1":
+        buyMenu(comic, username)
+
+    elif opcao == "2":
+        dados = openFile()
+
+        for user in dados["user_info"]:
+            if user["username"] == username:
+                user["carrinho"].append(comic)
+                saveFile(dados)
+                print("Item adicionado ao carrinho com sucesso!")
+                break
+
+        redirect = input("Deseja ver seus itens no carrinho? (s/n): ")
+
+        if redirect.lower() == "s":
+            shoppingList(username)
+
+        elif redirect.lower() == "n":
+            searchSys(username)
+
+        else:
+            print("Opção inválida.")
+            searchSys(username)
+
+    elif opcao == "0":
+        searchSys(username)
+
+    else:
+        print("Por favor, digite uma opção válida.")
+        showComicDetails(comic, username)
+
+
+def shoppingList(username):
+    dados = openFile()
+
+    for user in dados["user_info"]:
+        if user["username"] == username:
+
+            print("\n################### SEU CARRINHO ###################")
+
+            if not user["carrinho"]:
+                print("Seu carrinho está vazio.")
+
+            else:
+                for i, comic in enumerate(user["carrinho"], start=1):
+                    print(f"[{i}] {comic['nome']}")
+
+                print("\n[1] Remover item")
+                print("[0] Voltar ao menu principal")
+
+                opcao = input("Escolha uma opção: ")
+
+                if opcao == "1":
+                    item = input("Digite o número do item que deseja remover: ")
+
+                    if item.isdigit() and 1 <= int(item) <= len(user["carrinho"]):
+                        removido = user["carrinho"].pop(int(item) - 1)
+                        saveFile(dados)
+                        print(f"{removido['nome']} removido do carrinho.")
+
+                    else:
+                        print("Número inválido.")
+
+                elif opcao != "0":
+                    print("Opção inválida.")
+
+            menu_principal(username)
+            return
+
+
+def buyMenu(comic, username):
+    print("\n################### COMPRA ###################")
+    print(f"Produto: {comic['nome']}")
+    print("A funcionalidade de pagamento ainda não foi implementada.")
+
+    menu_principal(username)
+
+
+def stockCheck():
+    showStock()
+    menu_admin()
+
+
+def stockEditing():
+    print("\n################### EDIÇÃO DE ESTOQUE ###################")
+    print("Funcionalidade de edição ainda não implementada.")
+    menu_admin()
+
+
+def main():
     try:
-        with open('dados.json', 'r', encoding='utf-8') as file:
-            pass
+        openFile()
+
     except FileNotFoundError:
-        createFile()
-    print("##################### Bem-vindo ao sistema de gerenciamento da AMALGAMA COMIX!####################\n")
-    print("Digite 1 para: Cadastrar usuário")
-    print("Digite 2 para: Realizar login")
-    print("Digite 0 para: Sair")
+        dados = createFile()
+        saveFile(dados)
+
+    print("##################### BEM-VINDO AO SISTEMA DE GERENCIAMENTO DA AMALGAMA COMIX! #####################")
+
     menu_inicial()
+
 
 main()
