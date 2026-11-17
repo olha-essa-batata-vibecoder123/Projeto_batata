@@ -344,7 +344,6 @@ def showComicDetails(comic, username):
     print("\n------ DETALHES DO PRODUTO ------")
 
     print(f"Nome da Obra: {comic['nome']}")
-    print(f"Nome Alternativo: {comic.get('nome_alt', 'Não informado')}")
     print(f"Autor(es): {comic['autores']}")
     print(f"Desenhista(s): {comic['desenhistas']}")
     print(f"Data de lançamento: {comic['data']}")
@@ -442,7 +441,25 @@ def stockCheck():
 
 def stockEditing():
     print("\n################### EDIÇÃO DE ESTOQUE ###################")
-    print("Funcionalidade de edição ainda não implementada.")
+
+    dados = openFile()
+    estoque = dados["loja_info"]["estoque"]
+    
+    
+    for editora, colecoes in estoque.items():
+        print(f"\n################### {editora} ###################")
+    
+        for nome_saga, quadrinhos in colecoes.items():
+            print(f"\n################### {nome_saga} ###################")
+    
+        for quadrinho in quadrinhos:
+            print(f"{quadrinho['nome']} - {quadrinho['autores']}")
+
+        comic = input("Digite o título do quadrinho que deseja editar: ")
+
+        if comicValidation(comic):
+            
+
     menu_admin()
 
 
