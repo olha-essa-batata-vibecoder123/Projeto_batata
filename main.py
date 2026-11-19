@@ -588,7 +588,7 @@ def showStock():
     return
 
 
-def comicValidation(comic):
+def comicValidation(comic_title, comic_source):
     dados = openFile()
     estoque = dados["loja_info"]["estoque"]
 
@@ -775,19 +775,30 @@ def stockEditing():
             for quadrinho in quadrinhos:
                 print(f"{quadrinho['nome']} - {quadrinho['autores']}")
 
-    comic = input("Digite o título do quadrinho que deseja editar: ")
+    print("Digite o título, saga e a editora do quadrinho que deseja editar: ")
+    comic_title = input("Título: ")
+    comic_saga = input("Saga: ")
+    comic_source = input("Editora: ")
 
-    if comicValidation(comic):
+    if comicValidation(comic_title, comic_source):
         print("Obra encontrada.\n")
 
         print("Você pode:\n[1]Editar o título\n[2]Editar o título em português\n[3]Editar o(s) autor(es)\n[4]Editar o(s) desenhista(s)\n[5]Editar os preços\n[0]Retornar ao menu anterior")
         entrada = input("\nEscolha uma opção: ")
 
         if entrada.isdigit():
+            new_title = input("Digite o novo título da obra: ")
+            
             entrada = int(entrada)
 
             if entrada == 1:
-                titleFix()
+                del dados["loja_info"]["estoque"][f"{comic_source}"][f"{comic_saga}"][f"{comic_title}"]
+                
+                f"{new_title}" {
+                    
+                }
+
+                dados["loja_info"]["estoque"][f"{comic_source}"][f"{comic_saga}"].append()
             elif entrada == 2:
                 titleFixPt()
             elif entrada == 3:
@@ -805,7 +816,6 @@ def stockEditing():
         print("Obra não encontrada.")
 
     menu_admin()
-
 
 def main():
     try:
