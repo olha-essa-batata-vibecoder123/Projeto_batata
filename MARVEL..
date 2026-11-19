@@ -1,6 +1,3 @@
-Adicione `"nome_alt"` dentro de cada objeto de quadrinho, mantendo a indentação e os demais campos. Os nomes em português ficam assim:
-
-python
 
 ```python
 def createFile():
