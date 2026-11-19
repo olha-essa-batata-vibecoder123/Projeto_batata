@@ -1,0 +1,350 @@
+
+```python
+
+"DC Comics": {
+
+    "Crise nas Infinitas Terras / Crisis on Infinite Earths": [
+        {
+            "nome": f"Crisis on Infinite Earths #{i}",
+            "nome_alt": f"Crise nas Infinitas Terras #{i}",
+            "autores": "Marv Wolfman",
+            "desenhistas": "George Pérez",
+            "data": data,
+            "precos": {
+                "USD": 220.00,
+                "BRL": 1293.60
+            }
+        }
+        for i, data in enumerate([
+            "03/04/1985",
+            "01/05/1985",
+            "05/06/1985",
+            "03/07/1985",
+            "07/08/1985",
+            "04/09/1985",
+            "02/10/1985",
+            "06/11/1985",
+            "04/12/1985",
+            "01/01/1986",
+            "05/02/1986",
+            "05/03/1986"
+        ], start=1)
+    ],
+
+    "Sandman": {
+
+        "Preludes and Nocturnes / Prelúdios e Noturnos": [
+            {
+                "nome": "Sandman: The Sleep of the Just #1",
+                "nome_alt": "Sandman: O Sono dos Justos #1",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Sam Kieth",
+                "data": "29/11/1988",
+                "precos": {"USD": 250.00, "BRL": 1470.00}
+            },
+            {
+                "nome": "Sandman: Imperfect Hosts #2",
+                "nome_alt": "Sandman: Anfitriões Imperfeitos #2",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Sam Kieth",
+                "data": "10/01/1989",
+                "precos": {"USD": 30.00, "BRL": 176.40}
+            },
+            {
+                "nome": "Sandman: Dream a Little Dream of Me #3",
+                "nome_alt": "Sandman: Sonhe um Pequeno Sonho Comigo #3",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Sam Kieth",
+                "data": "31/01/1989",
+                "precos": {"USD": 20.00, "BRL": 117.60}
+            },
+            {
+                "nome": "Sandman: A Hope in Hell #4",
+                "nome_alt": "Sandman: Uma Esperança no Inferno #4",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Sam Kieth",
+                "data": "28/02/1989",
+                "precos": {"USD": 20.00, "BRL": 117.60}
+            },
+            {
+                "nome": "Sandman: Passengers #5",
+                "nome_alt": "Sandman: Passageiros #5",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Sam Kieth",
+                "data": "04/04/1989",
+                "precos": {"USD": 15.00, "BRL": 88.20}
+            },
+            {
+                "nome": "Sandman: 24 Hours #6",
+                "nome_alt": "Sandman: 24 Horas #6",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Sam Kieth",
+                "data": "26/04/1989",
+                "precos": {"USD": 35.00, "BRL": 205.80}
+            },
+            {
+                "nome": "Sandman: Sound and Fury #7",
+                "nome_alt": "Sandman: Som e Fúria #7",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Sam Kieth",
+                "data": "24/05/1989",
+                "precos": {"USD": 15.00, "BRL": 88.20}
+            },
+            {
+                "nome": "Sandman: The Sound of Her Wings #8",
+                "nome_alt": "Sandman: O Som de Suas Asas #8",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Mike Dringenberg",
+                "data": "27/06/1989",
+                "precos": {"USD": 100.00, "BRL": 588.00}
+            }
+        ],
+
+        "The Doll's House / A Casa de Bonecas": [
+            {
+                "nome": "Sandman: Tales in the Sand #9",
+                "nome_alt": "Sandman: Contos na Areia #9",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Mike Dringenberg",
+                "data": "01/08/1989",
+                "precos": {"USD": 15.00, "BRL": 88.20}
+            },
+            {
+                "nome": "Sandman: The Doll's House #10",
+                "nome_alt": "Sandman: A Casa de Bonecas #10",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Mike Dringenberg",
+                "data": "03/10/1989",
+                "precos": {"USD": 20.00, "BRL": 117.60}
+            },
+            {
+                "nome": "Sandman: Moving In #11",
+                "nome_alt": "Sandman: Mudando-se #11",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Mike Dringenberg",
+                "data": "31/10/1989",
+                "precos": {"USD": 15.00, "BRL": 88.20}
+            },
+            {
+                "nome": "Sandman: Playing House #12",
+                "nome_alt": "Sandman: Brincando de Casinha #12",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Michael Zulli",
+                "data": "28/11/1989",
+                "precos": {"USD": 15.00, "BRL": 88.20}
+            },
+            {
+                "nome": "Sandman: Men of Good Fortune #13",
+                "nome_alt": "Sandman: Homens de Boa Fortuna #13",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Mike Dringenberg",
+                "data": "02/01/1990",
+                "precos": {"USD": 15.00, "BRL": 88.20}
+            },
+            {
+                "nome": "Sandman: Collectors #14",
+                "nome_alt": "Sandman: Colecionadores #14",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Mike Dringenberg",
+                "data": "30/01/1990",
+                "precos": {"USD": 15.00, "BRL": 88.20}
+            },
+            {
+                "nome": "Sandman: Into the Night #15",
+                "nome_alt": "Sandman: Rumo à Noite #15",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Mike Dringenberg",
+                "data": "20/03/1990",
+                "precos": {"USD": 15.00, "BRL": 88.20}
+            },
+            {
+                "nome": "Sandman: Lost Hearts #16",
+                "nome_alt": "Sandman: Corações Perdidos #16",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Mike Dringenberg",
+                "data": "24/04/1990",
+                "precos": {"USD": 15.00, "BRL": 88.20}
+            }
+        ],
+
+        "Dream Country / País dos Sonhos": [
+            {
+                "nome": "Sandman: Calliope #17",
+                "nome_alt": "Sandman: Calíope #17",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Kelley Jones",
+                "data": "12/06/1990",
+                "precos": {"USD": 15.00, "BRL": 88.20}
+            },
+            {
+                "nome": "Sandman: A Dream of a Thousand Cats #18",
+                "nome_alt": "Sandman: Um Sonho de Mil Gatos #18",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Kelley Jones",
+                "data": "10/07/1990",
+                "precos": {"USD": 20.00, "BRL": 117.60}
+            },
+            {
+                "nome": "Sandman: A Midsummer Night's Dream #19",
+                "nome_alt": "Sandman: Sonho de uma Noite de Verão #19",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Charles Vess",
+                "data": "11/09/1990",
+                "precos": {"USD": 30.00, "BRL": 176.40}
+            },
+            {
+                "nome": "Sandman: Façade #20",
+                "nome_alt": "Sandman: Fachada #20",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Colleen Doran",
+                "data": "25/09/1990",
+                "precos": {"USD": 15.00, "BRL": 88.20}
+            }
+        ],
+
+        "Season of Mists / Estação das Brumas": [
+            {
+                "nome": "Sandman: Season of Mists – Prologue #21",
+                "nome_alt": "Sandman: Estação das Brumas – Prólogo #21",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Mike Dringenberg",
+                "data": "06/11/1990",
+                "precos": {"USD": 15.00, "BRL": 88.20}
+            },
+            {
+                "nome": "Sandman: Season of Mists – Chapter 1 #22",
+                "nome_alt": "Sandman: Estação das Brumas – Capítulo 1 #22",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Kelley Jones",
+                "data": "27/11/1990",
+                "precos": {"USD": 15.00, "BRL": 88.20}
+            },
+            {
+                "nome": "Sandman: Season of Mists – Chapter 2 #23",
+                "nome_alt": "Sandman: Estação das Brumas – Capítulo 2 #23",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Kelley Jones",
+                "data": "02/01/1991",
+                "precos": {"USD": 15.00, "BRL": 88.20}
+            },
+            {
+                "nome": "Sandman: Season of Mists – Chapter 3 #24",
+                "nome_alt": "Sandman: Estação das Brumas – Capítulo 3 #24",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Kelley Jones",
+                "data": "29/01/1991",
+                "precos": {"USD": 15.00, "BRL": 88.20}
+            },
+            {
+                "nome": "Sandman: Season of Mists – Chapter 4 #25",
+                "nome_alt": "Sandman: Estação das Brumas – Capítulo 4 #25",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Matt Wagner",
+                "data": "26/02/1991",
+                "precos": {"USD": 15.00, "BRL": 88.20}
+            },
+            {
+                "nome": "Sandman: Season of Mists – Chapter 5 #26",
+                "nome_alt": "Sandman: Estação das Brumas – Capítulo 5 #26",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Kelley Jones",
+                "data": "26/03/1991",
+                "precos": {"USD": 15.00, "BRL": 88.20}
+            },
+            {
+                "nome": "Sandman: Season of Mists – Chapter 6 #27",
+                "nome_alt": "Sandman: Estação das Brumas – Capítulo 6 #27",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Kelley Jones",
+                "data": "23/04/1991",
+                "precos": {"USD": 15.00, "BRL": 88.20}
+            },
+            {
+                "nome": "Sandman: Season of Mists – Epilogue #28",
+                "nome_alt": "Sandman: Estação das Brumas – Epílogo #28",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Mike Dringenberg",
+                "data": "28/05/1991",
+                "precos": {"USD": 20.00, "BRL": 117.60}
+            }
+        ],
+
+        "Fables and Reflections / Fábulas e Reflexões": [
+            {
+                "nome": "Sandman: Thermidor #29",
+                "nome_alt": "Sandman: Termidor #29",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Stan Woch",
+                "data": "25/06/1991",
+                "precos": {"USD": 15.00, "BRL": 88.20}
+            },
+            {
+                "nome": "Sandman: August #30",
+                "nome_alt": "Sandman: Agosto #30",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Bryan Talbot",
+                "data": "23/07/1991",
+                "precos": {"USD": 15.00, "BRL": 88.20}
+            },
+            {
+                "nome": "Sandman: Three Septembers and a January #31",
+                "nome_alt": "Sandman: Três Setembros e um Janeiro #31",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Shawn McManus",
+                "data": "03/09/1991",
+                "precos": {"USD": 15.00, "BRL": 88.20}
+            },
+            {
+                "nome": "Sandman: Slaughter on Fifth Avenue #32",
+                "nome_alt": "Sandman: Massacre na Quinta Avenida #32",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Shawn McManus",
+                "data": "24/09/1991",
+                "precos": {"USD": 15.00, "BRL": 88.20}
+            },
+            {
+                "nome": "Sandman: Lullabies of Broadway #33",
+                "nome_alt": "Sandman: Canções de Ninar da Broadway #33",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Shawn McManus",
+                "data": "29/10/1991",
+                "precos": {"USD": 15.00, "BRL": 88.20}
+            },
+            {
+                "nome": "Sandman: Bad Moon Rising #34",
+                "nome_alt": "Sandman: Lua Ruim em Ascensão #34",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Colleen Doran",
+                "data": "19/11/1991",
+                "precos": {"USD": 15.00, "BRL": 88.20}
+            },
+            {
+                "nome": "Sandman: Beginning to See the Light #35",
+                "nome_alt": "Sandman: Começando a Ver a Luz #35",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Shawn McManus",
+                "data": "17/12/1991",
+                "precos": {"USD": 15.00, "BRL": 88.20}
+            },
+            {
+                "nome": "Sandman: Ramadan #50",
+                "nome_alt": "Sandman: Ramadã #50",
+                "autores": "Neil Gaiman",
+                "desenhistas": "Scott McCloud",
+                "data": "20/04/1993",
+                "precos": {"USD": 25.00, "BRL": 147.00}
+            },
+            {
+                "nome": "Sandman Special: The Song of Orpheus #1",
+                "nome_alt": "Especial Sandman: A Canção de Orfeu #1",
+                "autores": "Neil Gaiman",
+                "desenhistas": "P. Craig Russell",
+                "data": "08/10/1991",
+                "precos": {"USD": 20.00, "BRL": 117.60}
+            }
+        ]
+    }
+}
+```
+
+=
