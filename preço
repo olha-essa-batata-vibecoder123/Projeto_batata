@@ -1,0 +1,165 @@
+loja_info = {
+    "estoque": {
+        "Marvel Comics": {
+            "Weapon X": [
+                {
+                    "nome": "Weapon X",
+                    "nome_alt": "Arma X",
+                    "autores": "Barry Windsor-Smith",
+                    "desenhistas": "Barry Windsor-Smith",
+                    "data": "1991",
+                    "precos": {
+                        "USD": 100.00,
+                        "BRL": 588.00
+                    }
+                },
+                {
+                    "nome": "The Shiva Scenario",
+                    "nome_alt": "O Cenário Shiva",
+                    "autores": "Larry Hama",
+                    "desenhistas": "Marc Silvestri",
+                    "data": "1991–1992",
+                    "precos": {
+                        "USD": 30.00,
+                        "BRL": 176.40
+                    }
+                },
+                {
+                    "nome": "Weapon X: The Draft – Wild Child",
+                    "nome_alt": "Arma X: O Recrutamento – Selvagem",
+                    "autores": "Frank Tieri",
+                    "desenhistas": "Georges Jeanty",
+                    "data": "2002",
+                    "precos": {
+                        "USD": 15.00,
+                        "BRL": 88.20
+                    }
+                },
+                {
+                    "nome": "Weapon X",
+                    "nome_alt": "Arma X",
+                    "autores": "Greg Pak",
+                    "desenhistas": "Greg Land e outros",
+                    "data": "2017–2018",
+                    "precos": {
+                        "USD": 60.00,
+                        "BRL": 352.80
+                    }
+                }
+            ],
+
+            "Secret Wars": [
+                {
+                    "nome": "Marvel Super Heroes: Secret Wars #1–12",
+                    "nome_alt": "Super-Heróis Marvel: Guerras Secretas #1–12",
+                    "autores": "Jim Shooter",
+                    "desenhistas": "Mike Zeck",
+                    "data": "1984–1985",
+                    "precos": {
+                        "USD": 300.00,
+                        "BRL": 1764.00
+                    }
+                },
+                {
+                    "nome": "Secret Wars II #1–9",
+                    "nome_alt": "Guerras Secretas II #1–9",
+                    "autores": "Jim Shooter",
+                    "desenhistas": "Al Milgrom",
+                    "data": "1985–1986",
+                    "precos": {
+                        "USD": 100.00,
+                        "BRL": 588.00
+                    }
+                },
+                {
+                    "nome": "Secret Wars #1–9",
+                    "nome_alt": "Guerras Secretas #1–9",
+                    "autores": "Jonathan Hickman",
+                    "desenhistas": "Esad Ribić",
+                    "data": "2015–2016",
+                    "precos": {
+                        "USD": 100.00,
+                        "BRL": 588.00
+                    }
+                }
+            ],
+
+            "Civil War": [
+                {
+                    "nome": "Civil War #1–7",
+                    "nome_alt": "Guerra Civil #1–7",
+                    "autores": "Mark Millar",
+                    "desenhistas": "Steve McNiven",
+                    "data": "2006–2007",
+                    "precos": {
+                        "USD": 70.00,
+                        "BRL": 411.60
+                    }
+                },
+                {
+                    "nome": "Civil War: Front Line #1–11",
+                    "nome_alt": "Guerra Civil: Linha de Frente #1–11",
+                    "autores": "Paul Jenkins",
+                    "desenhistas": "Ramon Bachs / Steve Lieber",
+                    "data": "2006–2007",
+                    "precos": {
+                        "USD": 140.00,
+                        "BRL": 823.20
+                    }
+                },
+                {
+                    "nome": "Civil War: The Confession",
+                    "nome_alt": "Guerra Civil: A Confissão",
+                    "autores": "Brian Michael Bendis",
+                    "desenhistas": "Alex Maleev",
+                    "data": "2007",
+                    "precos": {
+                        "USD": 20.00,
+                        "BRL": 117.60
+                    }
+                },
+                {
+                    "nome": "Civil War: The Initiative",
+                    "nome_alt": "Guerra Civil: A Iniciativa",
+                    "autores": "Brian Michael Bendis / Warren Ellis",
+                    "desenhistas": "Marc Silvestri",
+                    "data": "2007",
+                    "precos": {
+                        "USD": 15.00,
+                        "BRL": 88.20
+                    }
+                }
+            ]
+        },
+ "DC Comics": {
+            "Crise nas Infinitas Terras / Crisis on Infinite Earths": [
+                {
+                    "nome": f"Crisis on Infinite Earths #{i}",
+                    "nome_alt": f"Crise nas Infinitas Terras #{i}",
+                    "autores": "Marv Wolfman",
+                    "desenhistas": "George Pérez",
+                    "data": data,
+                    "precos": {
+                        "USD": 220.00,
+                        "BRL": 1293.60
+                    }
+                }
+                for i, data in enumerate([
+                    "03/04/1985",
+                    "01/05/1985",
+                    "05/06/1985",
+                    "03/07/1985",
+                    "07/08/1985",
+                    "04/09/1985",
+                    "02/10/1985",
+                    "06/11/1985",
+                    "04/12/1985",
+                    "01/01/1986",
+                    "05/02/1986",
+                    "05/03/1986"
+                ], start=1)
+            ]
+        }
+    }
+}
+       
