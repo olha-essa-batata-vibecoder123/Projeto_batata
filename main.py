@@ -653,6 +653,9 @@ def searchSys(username):
 
             elif numero != 0:
                 print("Opção inválida.")
+        else:
+            print("Tente novamente")
+            searchSys()
 
     menu_principal(username)
 
@@ -664,7 +667,7 @@ def showComicDetails(comic, username):
     print(f"Autor(es): {comic['autores']}")
     print(f"Desenhista(s): {comic['desenhistas']}")
     print(f"Data de lançamento: {comic['data']}")
-    print(f"Preço da Obra (USD/BRL): {comic.get('precos', 'Não informado')}")
+    print(f"Preço da Obra (USD/BRL): {comic.get('precos')}")
 
     print("\n[1] Comprar obra")
     print("[2] Adicionar item ao carrinho")
@@ -753,6 +756,7 @@ def buyMenu(comic, username):
 
 def stockCheck():
     showStock()
+    print("\nEsses são os itens em estoque no momento.")
     menu_admin()
 
 
@@ -774,8 +778,29 @@ def stockEditing():
     comic = input("Digite o título do quadrinho que deseja editar: ")
 
     if comicValidation(comic):
-        print("Obra encontrada.")
+        print("Obra encontrada.\n")
 
+        print("Você pode:\n[1]Editar o título\n[2]Editar o título em português\n[3]Editar o(s) autor(es)\n[4]Editar o(s) desenhista(s)\n[5]Editar os preços\n[0]Retornar ao menu anterior")
+        entrada = input("\nEscolha uma opção: ")
+
+        if entrada.isdigit():
+            entrada = int(entrada)
+
+            if entrada == 1:
+                titleFix()
+            elif entrada == 2:
+                titleFixPt()
+            elif entrada == 3:
+                authorFix()
+            elif entrada == 4:
+                drawerFix()
+            elif entrada == 5:
+                priceFix()
+            elif entrada == 0:
+                menu_admin()
+            else:
+                print("Entrada inválida. Digite um número entre 1 e 5 ou 0 APENAS: ")
+                stockEditing()
     else:
         print("Obra não encontrada.")
 
