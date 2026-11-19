@@ -1,4 +1,172 @@
 import json
+import unicodedata
+import os
+import sys
+import ctypes
+import hashlib
+import hmac
+import secrets
+import base64
+from getpass import getpass
+from difflib import SequenceMatcher
+
+
+ITERACOES_PBKDF2 = 600_000
+
+
+def criarHashSenha(senha):
+    salt = secrets.token_bytes(16)
+    hash_senha = hashlib.pbkdf2_hmac(
+        "sha256",
+        senha.encode("utf-8"),
+        salt,
+        ITERACOES_PBKDF2
+    )
+
+    return (
+        f"pbkdf2_sha256${ITERACOES_PBKDF2}$"
+        f"{base64.b64encode(salt).decode('ascii')}$"
+        f"{base64.b64encode(hash_senha).decode('ascii')}"
+    )
+
+
+def verificarSenha(senha, senha_armazenada):
+    if senha_armazenada.startswith("pbkdf2_sha256$"):
+        try:
+            algoritmo, iteracoes, salt_b64, hash_b64 = senha_armazenada.split("$")
+            salt = base64.b64decode(salt_b64)
+            hash_original = base64.b64decode(hash_b64)
+
+            hash_teste = hashlib.pbkdf2_hmac(
+                "sha256",
+                senha.encode("utf-8"),
+                salt,
+                int(iteracoes)
+            )
+
+            return hmac.compare_digest(hash_teste, hash_original)
+
+        except (ValueError, TypeError):
+            return False
+
+    return hmac.compare_digest(senha, senha_armazenada)
+
+
+def validarSenhaNova(senha):
+    if len(senha) < 12:
+        print("A senha deve ter pelo menos 12 caracteres.")
+        return False
+
+    if not any(c.islower() for c in senha):
+        print("A senha precisa ter uma letra minuscula.")
+        return False
+
+    if not any(c.isupper() for c in senha):
+        print("A senha precisa ter uma letra maiuscula.")
+        return False
+
+    if not any(c.isdigit() for c in senha):
+        print("A senha precisa ter um numero.")
+        return False
+
+    return True
+
+
+class DATA_BLOB(ctypes.Structure):
+    _fields_ = [
+        ("cbData", ctypes.c_uint32),
+        ("pbData", ctypes.POINTER(ctypes.c_ubyte))
+    ]
+
+
+def _blob(dados):
+    buffer = ctypes.create_string_buffer(dados)
+    return DATA_BLOB(
+        len(dados),
+        ctypes.cast(buffer, ctypes.POINTER(ctypes.c_ubyte))
+    ), buffer
+
+
+def criptografarArquivo(conteudo):
+    if os.name != "nt":
+        raise RuntimeError(
+            "A criptografia sem bibliotecas externas desta versao "
+            "usa o Windows DPAPI. Execute no Windows."
+        )
+
+    entrada, buffer_entrada = _blob(conteudo)
+    saida = DATA_BLOB()
+
+    sucesso = ctypes.windll.crypt32.CryptProtectData(
+        ctypes.byref(entrada),
+        "Amalgama Comix",
+        None,
+        None,
+        None,
+        0,
+        ctypes.byref(saida)
+    )
+
+    if not sucesso:
+        raise ctypes.WinError()
+
+    try:
+        return ctypes.string_at(saida.pbData, saida.cbData)
+    finally:
+        ctypes.windll.kernel32.LocalFree(
+            ctypes.cast(saida.pbData, ctypes.c_void_p)
+        )
+
+
+def descriptografarArquivo(conteudo):
+    if os.name != "nt":
+        raise RuntimeError(
+            "A criptografia sem bibliotecas externas desta versao "
+            "usa o Windows DPAPI. Execute no Windows."
+        )
+
+    entrada, buffer_entrada = _blob(conteudo)
+    saida = DATA_BLOB()
+
+    sucesso = ctypes.windll.crypt32.CryptUnprotectData(
+        ctypes.byref(entrada),
+        None,
+        None,
+        None,
+        None,
+        0,
+        ctypes.byref(saida)
+    )
+
+    if not sucesso:
+        raise RuntimeError(
+            "Nao foi possivel descriptografar dados.json. "
+            "Use a mesma conta do Windows que criptografou o arquivo."
+        )
+
+    try:
+        return ctypes.string_at(saida.pbData, saida.cbData)
+    finally:
+        ctypes.windll.kernel32.LocalFree(
+            ctypes.cast(saida.pbData, ctypes.c_void_p)
+        )
+
+
+def _solicitarSenhaAdmin():
+    print("\nConfiguracao inicial do administrador.")
+    print("Crie uma senha forte com pelo menos 12 caracteres.")
+
+    while True:
+        senha = getpass("Nova senha do administrador: ")
+        if not validarSenhaNova(senha):
+            continue
+
+        confirmacao = getpass("Confirme a senha: ")
+        if senha != confirmacao:
+            print("As senhas nao coincidem.")
+            continue
+
+        return senha
 
 
 def createFile():
@@ -7,7 +175,7 @@ def createFile():
 
         "user_info_admin": {
             "username": "administrador",
-            "senha": "batatasvoadoras123"
+            "senha": criarHashSenha(_solicitarSenhaAdmin())
         },
 
         "loja_info": {
@@ -118,23 +286,10 @@ def createFile():
                             "nome_alt": f"Crise nas Infinitas Terras #{i}",
                             "autores": "Marv Wolfman",
                             "desenhistas": "George Pérez",
-                            "data": data,
+                            "data": "1985–1986",
                             "precos": None
                         }
-                        for i, data in enumerate([
-                            "03/04/1985",
-                            "01/05/1985",
-                            "05/06/1985",
-                            "03/07/1985",
-                            "07/08/1985",
-                            "04/09/1985",
-                            "02/10/1985",
-                            "06/11/1985",
-                            "04/12/1985",
-                            "01/01/1986",
-                            "05/02/1986",
-                            "05/03/1986"
-                        ], start=1)
+                        for i in range(1, 13)
                     ]
                 }
             }
@@ -145,76 +300,204 @@ def createFile():
 
 
 def saveFile(dados):
-    with open('dados.json', 'w', encoding='utf-8') as file:
-        json.dump(dados, file, ensure_ascii=False, indent=4)
+    conteudo = json.dumps(
+        dados,
+        ensure_ascii=False,
+        indent=4
+    ).encode("utf-8")
+
+    conteudo_criptografado = criptografarArquivo(conteudo)
+
+    arquivo_temporario = "dados.tmp"
+
+    with open(arquivo_temporario, "wb") as arquivo:
+        arquivo.write(b"AMALGAMA_ENCRYPTED_V1\n")
+        arquivo.write(conteudo_criptografado)
+
+    os.replace(arquivo_temporario, "dados.json")
 
 
 def openFile():
-    with open('dados.json', 'r', encoding='utf-8') as file:
-        dados = json.load(file)
+    with open("dados.json", "rb") as arquivo:
+        conteudo = arquivo.read()
+
+    marcador = b"AMALGAMA_ENCRYPTED_V1\n"
+
+    if conteudo.startswith(marcador):
+        conteudo_criptografado = conteudo[len(marcador):]
+        conteudo_json = descriptografarArquivo(conteudo_criptografado)
+        return json.loads(conteudo_json.decode("utf-8"))
+
+    dados = json.loads(conteudo.decode("utf-8"))
+    saveFile(dados)
 
     return dados
 
 
-def signUp():
-    print("Cadastro de usuário")
+def normalizarTexto(texto):
+    texto = texto.lower().strip()
+    texto = unicodedata.normalize("NFD", texto)
+    texto = "".join(
+        caractere
+        for caractere in texto
+        if unicodedata.category(caractere) != "Mn"
+    )
 
-    nome = input("Digite seu nome completo: ")
-    username = input("Digite seu nome de usuário: ")
-    senha = input("Digite sua senha: ")
+    return texto
+
+
+def buscarObras(termo):
+    dados = openFile()
+    estoque = dados["loja_info"]["estoque"]
+
+    termo_normalizado = normalizarTexto(termo)
+    resultados = []
+
+    for editora, colecoes in estoque.items():
+        for saga, quadrinhos in colecoes.items():
+            for quadrinho in quadrinhos:
+
+                campos = [
+                    quadrinho.get("nome", ""),
+                    quadrinho.get("nome_alt", ""),
+                    quadrinho.get("autores", ""),
+                    quadrinho.get("desenhistas", ""),
+                    saga
+                ]
+
+                melhor_pontuacao = 0
+
+                for campo in campos:
+                    campo_normalizado = normalizarTexto(campo)
+
+                    if termo_normalizado in campo_normalizado:
+                        melhor_pontuacao = 1
+                        break
+
+                    pontuacao = SequenceMatcher(
+                        None,
+                        termo_normalizado,
+                        campo_normalizado
+                    ).ratio()
+
+                    melhor_pontuacao = max(
+                        melhor_pontuacao,
+                        pontuacao
+                    )
+
+                if melhor_pontuacao >= 0.55:
+                    resultados.append({
+                        "editora": editora,
+                        "saga": saga,
+                        "quadrinho": quadrinho,
+                        "pontuacao": melhor_pontuacao
+                    })
+
+    resultados.sort(
+        key=lambda resultado: resultado["pontuacao"],
+        reverse=True
+    )
+
+    return resultados
+
+
+def signUp():
+    print("\nCadastro de usuario")
+
+    nome = input("Digite seu nome: ").strip()
+    username = input("Crie um nome de usuario: ").strip()
+
+    if not nome or not username:
+        print("Nome e usuario nao podem ficar vazios.")
+        menu_inicial()
+        return
+
+    senha = getpass("Crie uma senha: ")
+
+    if not validarSenhaNova(senha):
+        menu_inicial()
+        return
+
+    confirmacao = getpass("Confirme sua senha: ")
+
+    if senha != confirmacao:
+        print("As senhas nao coincidem.")
+        menu_inicial()
+        return
 
     dados = openFile()
 
-    if username == dados["user_info_admin"]["username"] and senha == dados["user_info_admin"]["senha"]:
-        print("Bem-vindo ao menu de administrador!")
-        menu_admin()
+    if username == dados["user_info_admin"]["username"]:
+        print("Nome de usuario indisponivel.")
+        menu_inicial()
         return
 
     for user in dados["user_info"]:
         if username == user["username"]:
-            print("Nome de usuário já cadastrado.")
+            print("Nome de usuario ja cadastrado.")
+            menu_inicial()
             return
 
     new_user = {
         "nome": nome,
         "username": username,
-        "senha": senha,
+        "senha": criarHashSenha(senha),
         "carrinho": []
     }
 
     dados["user_info"].append(new_user)
     saveFile(dados)
 
-    print(f"Cadastro realizado com sucesso!\nBem-vindo(a), {new_user['nome']}!")
-
+    print(f"Cadastro realizado com sucesso!\nBem-vindo(a), {nome}!")
     menu_principal(username)
 
 
 def logIn():
-    print("Login de usuário")
+    print("Login de usuario")
 
-    username = input("Digite seu nome de usuário: ")
-    senha = input("Digite sua senha: ")
+    username = input("Digite seu nome de usuario: ").strip()
+    senha = getpass("Digite sua senha: ")
 
     dados = openFile()
 
-    if username == dados["user_info_admin"]["username"] and senha == dados["user_info_admin"]["senha"]:
-        print("Bem-vindo ao menu de administrador!")
-        menu_admin()
-        return
+    admin = dados["user_info_admin"]
 
-    for user in dados["user_info"]:
-        if username == user["username"] and senha == user["senha"]:
-            print(f"Login realizado com sucesso!\nBem-vindo(a), {user['nome']}!")
-            menu_principal(username)
+    if username == admin["username"]:
+        senha_correta = verificarSenha(senha, admin["senha"])
+
+        if senha_correta:
+            if not admin["senha"].startswith("pbkdf2_sha256$"):
+                admin["senha"] = criarHashSenha(senha)
+                saveFile(dados)
+
+            print("Bem-vindo ao menu de administrador!")
+            menu_admin()
             return
 
-    print("Nome de usuário ou senha incorretos.")
+    for user in dados["user_info"]:
+        if username == user["username"]:
+            senha_correta = verificarSenha(senha, user["senha"])
+
+            if senha_correta:
+                if not user["senha"].startswith("pbkdf2_sha256$"):
+                    user["senha"] = criarHashSenha(senha)
+                    saveFile(dados)
+
+                print(
+                    f"Login realizado com sucesso!\n"
+                    f"Bem-vindo(a), {user['nome']}!"
+                )
+                menu_principal(username)
+                return
+
+            break
+
+    print("Nome de usuario ou senha incorretos.")
     menu_inicial()
 
 
 def menu_inicial():
-    print("\n################ MENU INICIAL ################")
+    print("\n---------- Menu inicial ----------")
     print("[1] Cadastrar usuário")
     print("[2] Realizar login")
     print("[0] Sair")
@@ -309,33 +592,67 @@ def comicValidation(comic):
     dados = openFile()
     estoque = dados["loja_info"]["estoque"]
 
+    comic = normalizarTexto(comic)
+
     for editora, colecoes in estoque.items():
-
         for nome_colecao, quadrinhos in colecoes.items():
-
             for quadrinho in quadrinhos:
 
-                nome_original = quadrinho["nome"].lower()
-                nome_alternativo = quadrinho.get("nome_alt", "").lower()
+                nome_original = normalizarTexto(quadrinho["nome"])
+                nome_alternativo = normalizarTexto(
+                    quadrinho.get("nome_alt", "")
+                )
 
-                if comic.lower() == nome_original or comic.lower() == nome_alternativo:
+                if comic == nome_original or comic == nome_alternativo:
                     return quadrinho
 
     return None
 
 
 def searchSys(username):
-    showStock()
+    print("\n########## SISTEMA DE BUSCA ##########")
 
-    comic = input("\nDigite o nome da obra para ver seus detalhes: ")
+    print("Digite parte do nome, autor, desenhista ou saga.")
+    print("Digite 0 para voltar ao menu.")
 
-    resultado = comicValidation(comic)
+    termo = input("\nO que deseja pesquisar? ")
 
-    if resultado:
-        showComicDetails(resultado, username)
+    if termo == "0":
+        menu_principal(username)
+        return
+
+    resultados = buscarObras(termo)
+
+    if not resultados:
+        print("\nNenhuma obra encontrada.")
 
     else:
-        print("Obra não encontrada.")
+        print(f"\nForam encontradas {len(resultados)} obras:")
+
+        for i, resultado in enumerate(resultados, start=1):
+            comic = resultado["quadrinho"]
+
+            print(f"\n[{i}] {comic['nome']}")
+            print(f"    Nome alternativo: {comic.get('nome_alt', 'Não informado')}")
+            print(f"    Editora: {resultado['editora']}")
+            print(f"    Saga: {resultado['saga']}")
+            print(f"    Autor: {comic['autores']}")
+
+        escolha = input(
+            "\nDigite o número da obra para ver detalhes "
+            "ou 0 para voltar: "
+        )
+
+        if escolha.isdigit():
+            numero = int(escolha)
+
+            if 1 <= numero <= len(resultados):
+                comic = resultados[numero - 1]["quadrinho"]
+                showComicDetails(comic, username)
+                return
+
+            elif numero != 0:
+                print("Opção inválida.")
 
     menu_principal(username)
 
@@ -444,21 +761,23 @@ def stockEditing():
 
     dados = openFile()
     estoque = dados["loja_info"]["estoque"]
-    
-    
+
     for editora, colecoes in estoque.items():
         print(f"\n################### {editora} ###################")
-    
+
         for nome_saga, quadrinhos in colecoes.items():
             print(f"\n################### {nome_saga} ###################")
-    
-        for quadrinho in quadrinhos:
-            print(f"{quadrinho['nome']} - {quadrinho['autores']}")
 
-        comic = input("Digite o título do quadrinho que deseja editar: ")
+            for quadrinho in quadrinhos:
+                print(f"{quadrinho['nome']} - {quadrinho['autores']}")
 
-        if comicValidation(comic):
-            
+    comic = input("Digite o título do quadrinho que deseja editar: ")
+
+    if comicValidation(comic):
+        print("Obra encontrada.")
+
+    else:
+        print("Obra não encontrada.")
 
     menu_admin()
 
@@ -471,7 +790,7 @@ def main():
         dados = createFile()
         saveFile(dados)
 
-    print("##################### BEM-VINDO AO SISTEMA DE GERENCIAMENTO DA AMALGAMA COMIX! #####################")
+    print("==================== Bem-vindo à ALMAGAMA COMIX! ====================")
 
     menu_inicial()
 
